@@ -43,7 +43,7 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className={clsx("sticky top-0 z-50 border-b border-[#01224D] transition duration-300", {'backdrop-blur-lg h-[85px]': hasScrolled })}>
+    <nav className={clsx("sticky top-0 z-50 border-b border-[#01224D] transition duration-300", {'backdrop-blur-lg  h-[69px] md:h-[85px]': hasScrolled })}>
       <div className="absolute w-full">
       <div className="container mx-auto px-4 relative lg:text-sm">
         <div className="py-3 md:pt-7 flex justify-between items-center">

@@ -1,14 +1,15 @@
 import { Button } from "@/components/ui/button"
 import Navbar from "@/components/Sections/Navbar";
 import Link from "next/link";
+import Welcome from "@/components/Sections/Welcome";
 
 export default function Home() {
   return (
     <main className="min-h-screen w-full bg-primary-background text-primary-foreground relative">
        <div className="h-[2px] w-full bg-main-gradient absolute top-0 z-50"></div>
       <Navbar></Navbar>
-      <section className="w-full h-screen">
-        <div className="h-[85%] md:h-[98%] relative bg-[url('/assets/bg-hero.png')] bg:contain md:bg-cover">
+      <section className="w-full">
+        <div className="h-[85vh] md:h-[98vh] relative bg-[url('/assets/bg-hero.png')] bg:contain md:bg-cover">
           <div className="h-[85px]"></div>
           {/* <div className="h-[2px] w-full bg-main-gradient absolute top-0"></div> */}
           <div className="h-[2px] w-full bg-main-gradient absolute bottom-0"></div>
@@ -23,21 +24,23 @@ export default function Home() {
                   <span>&apos;24</span>
                 </div>
               </div>
-              <div className="h-24">
-                {/* <button>Register</button> */}
+              <div className="py-6">
+                <button className="py-1 px-6 bg-text-gradient font-bold rounded text-md">Register</button>
               </div>
             </div>
           </div>
-          <div className="container flex items-center gap-4">
+          <div className="absolute w-full bottom-10">
+            <div className="container flex items-center gap-4 ">
             <a href="https://www.facebook.com" target="_blank"><img src="/assets/social/fb_logo.svg" alt="" className="h-8"/></a>
             <a href="https://www.facebook.com" target="_blank"><img src="/assets/social/instagram_logo.svg" alt="" className="h-8"/></a>
             <a href="https://www.facebook.com" target="_blank"><img src="/assets/social/linkedin_logo.svg" alt="" className="h-8"/></a>
             <a href="https://www.facebook.com" target="_blank"><img src="/assets/social/x_logo.svg" alt="" className="h-7"/></a>
+            </div>
+
           </div>
         </div>
       </section>
-      <section className="w-full h-screen "></section>
-      <section className="w-full h-screen "></section>
+     <Welcome/>
       
     </main>
   );
