@@ -27,6 +27,7 @@ const config = {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          background: "hsl(var(--primary-background))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -53,6 +54,11 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      backgroundImage: {
+        'main-gradient': 'linear-gradient(to right, #000011 0%, #ED1834 25%, #FFBB00 50%,  #ED1834 75%,  #000011 100%)',
+        'text-gradient': 'linear-gradient(to right, #FFBB00 0%, #ef3349 100%)'
+        // 'text-gradient': 'linear-gradient(to right, #FFBB00 0%, #ED1B34 100%)'
+      }, 
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

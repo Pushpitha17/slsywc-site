@@ -1,0 +1,10 @@
+<svg width="24" height="24" viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg">
+  <linearGradient id="linearGradient" x1="0%" y1="50%" x2="100%" y2="50%">
+    <stop offset="0%" style="stop-color:#FFBB01;" />
+    <stop offset="100%" style="stop-color:#F56421;" />
+  </linearGradient>
+  <rect y="4" width="24" height="2" fill="url(#linearGradient)" />
+  <rect y="10" width="24" height="2" fill="url(#linearGradient)" />
+  <rect y="16" width="24" height="2" fill="url(#linearGradient)" />
+</svg>
