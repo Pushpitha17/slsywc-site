@@ -20,7 +20,7 @@ export default function Home() {
               <div className="font-bold text-[4rem] leading-[4rem] md:text-[6rem] md:leading-[6rem] ">
                 <div className="flex-col inline-flex bg-text-gradient text-transparent bg-clip-text">
                   <span>SLSYWC</span>
-                  <span>'24</span>
+                  <span>&apos;24</span>
                 </div>
               </div>
               <div className="h-24">
