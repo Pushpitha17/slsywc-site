@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "SLSYWC'24",
-  description: "IEEE SL SECTION STUDENT | YP | WIE CONGRESS IN COLLABORATION WITH CS SYP GLOBAL CONGRESS",
+  description: "IEEE SL SECTION STUDENTS | YP | WIE CONGRESS IN COLLABORATION WITH CS SYP GLOBAL CONGRESS",
   icons: {
     icon: ['/assets/logo.ico'],
   },
