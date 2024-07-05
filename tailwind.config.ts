@@ -75,12 +75,24 @@ const config = {
         },
         "gradient-animation": {
           from: { 'background-position': '200% center' },
+        },
+        'infinite-scroll-left': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },
+        'infinite-scroll-right': {
+          from: { transform: 'translateX(-100%)' },
+          to: { transform: 'translateX(0%)' },
         }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "gradient-animation": "gradient-animation 6s linear infinite",
+        'infinite-scroll-left': 'infinite-scroll-left 25s linear infinite',
+        'infinite-scroll-right': 'infinite-scroll-right 25s linear infinite',
+        'infinite-scroll-left-mobile': 'infinite-scroll-left 16s linear infinite',
+        'infinite-scroll-right-mobile': 'infinite-scroll-right 14s linear infinite',
       },
     },
   },
