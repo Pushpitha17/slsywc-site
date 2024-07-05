@@ -55,8 +55,8 @@ const config = {
         },
       },
       backgroundImage: {
-        'main-gradient': 'linear-gradient(to right, #000011 0%, #ED1834 25%, #FFBB00 50%,  #ED1834 75%,  #000011 100%)',
-        'text-gradient': 'linear-gradient(to right, #FFBB00 0%, #ef3349 100%)'
+        'main-gradient': 'linear-gradient(to right, #9E0521 0%, #E71010 50%,  #9E0521 100%)',
+        'text-gradient': 'linear-gradient(to right, #E71010 0%, #9E0521 100%)'
         // 'text-gradient': 'linear-gradient(to right, #FFBB00 0%, #ED1B34 100%)'
       }, 
       borderRadius: {
@@ -73,10 +73,14 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "gradient-animation": {
+          from: { 'background-position': '200% center' },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "gradient-animation": "gradient-animation 6s linear infinite",
       },
     },
   },
