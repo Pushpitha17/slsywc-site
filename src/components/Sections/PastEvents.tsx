@@ -9,10 +9,10 @@ function PastEvents() {
             Past Events
           </h2>
         </div>
-        <div className="md:flex min-h-screen items-center justify-center gap-6">
+        <div className="md:flex md:min-h-screen items-center justify-center gap-6">
           <div className="md:w-1/2">
             <img src="/assets/past_desktop.png" className="hidden md:block" alt="" />
-            <img src="/assets/past_mobile.png" className="md:hidden mx-auto my-12" alt="" />
+            <img src="/assets/past_mobile.png" className="md:hidden mx-auto my-12 w-full" alt="" />
           </div>
           <div className="md:w-1/2 md:max-w-[40ch]">
             <p className="my-6 text-justify md:text-[22px]">
