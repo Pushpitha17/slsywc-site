@@ -27,7 +27,7 @@ function Theme() {
               </p>
             </div>
             <p className="my-6 text-justify md:text-[22px]">
-              The IEEE Sri Lanka Section Student | Young Professionals | Women
+              The IEEE Sri Lanka Section Students | Young Professionals | Women
               in Engineering Congress 2024 will serve as the 13th installment of
               the largest technical conference in the country. It would pose as
               a platform that unites researchers, academics, students, and

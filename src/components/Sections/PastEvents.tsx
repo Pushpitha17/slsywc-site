@@ -2,11 +2,11 @@ import React from "react"
 
 function PastEvents() {
   return (
-    <section>
+    <section className="my-12">
       <div className="container">
         <div className="text-center">
           <h2 className="text-2xl md:text-5xl font-bold bg-text-gradient text-transparent bg-clip-text uppercase">
-            Past Events
+            Glimpse from 2023
           </h2>
         </div>
         <div className="md:flex md:min-h-screen items-center justify-center gap-6">
@@ -16,7 +16,7 @@ function PastEvents() {
           </div>
           <div className="md:w-1/2 md:max-w-[40ch]">
             <p className="my-6 text-justify md:text-[22px]">
-              In 2023, the IEEE Sri Lanka Section Student | Young Professionals
+              In 2023, the IEEE Sri Lanka Section Students | Young Professionals
               | Women in Engineering Congress in collaboration with the IEEE
               Signal Processing Society marked its 12th installment with the
               theme &quot;Dreams Conquer Boundaries.&quot; The event was held for over

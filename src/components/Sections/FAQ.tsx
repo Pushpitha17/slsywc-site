@@ -8,7 +8,7 @@ import {
 
 const data = [
   {
-    q: "1. What is the IEEE Sri Lanka Section | Student | Young Professionals | Women in Engineering Congress (SLSYWC) 2024?",
+    q: "1. What is the IEEE Sri Lanka Section | Students | Young Professionals | Women in Engineering Congress (SLSYWC) 2024?",
     ans: "The SLSYWC 2024 is the biggest technical conference hosted by the IEEE Sri Lanka Section. It is a three-day event featuring national and international speakers, with over 200 delegates including undergraduates, graduates, academics, and industry professionals. The congress aims to provide a platform for networking, knowledge sharing, and professional development in the fields of engineering and technology."
   },
   {

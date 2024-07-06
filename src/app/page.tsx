@@ -20,7 +20,7 @@ export default function Home() {
           <img className="absolute right-0 bottom-0 mx-auto h-[50%] max-w-full lg:hidden" src="/assets/hero_graphic.png"></img>
           <div className="container mx-auto md:h-[calc(98%-150px)] ">
             <div className="md:pt-32 pt-16 md:pl-24">
-              <div className="mb-6 md:mb-3 font-semibold text-center md:text-start">IEEE Sri Lanka Section Student | YP | WIE CONGRESS </div>
+              <div className="mb-6 md:mb-3 font-semibold text-center md:text-start">IEEE Sri Lanka Section Students | YP | WIE Congress </div>
               <div className="font-bold text-[4rem] leading-[4rem] md:text-[6rem] md:leading-[6rem] text-center md:text-start">
                 <div className="flex-col inline-flex bg-[linear-gradient(to_right,#0060dd,#04e4fe,#0060dd,#04e4fe,#0060dd)] text-transparent bg-clip-text bg-[length:200%_auto] animate-gradient-animation">
                   <span>SLSYWC</span>
