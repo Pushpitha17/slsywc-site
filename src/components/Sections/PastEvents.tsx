@@ -15,7 +15,7 @@ function PastEvents() {
             <img src="/assets/past_mobile.png" className="md:hidden mx-auto my-12 w-full" alt="" />
           </div>
           <div className="md:w-1/2 md:max-w-[40ch]">
-            <p className="my-6 text-justify md:text-[22px]">
+            <p className="my-6 text-justify md:text-left md:text-[22px]">
               In 2023, the IEEE Sri Lanka Section Students | Young Professionals
               | Women in Engineering Congress in collaboration with the IEEE
               Signal Processing Society marked its 12th installment with the

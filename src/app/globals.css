@@ -7,6 +7,6 @@
     --foreground : 0, 84%, 60%;
     --primary :198 93% 88%;
     --primary-foreground :0 0% 100%;
-    --primary-background :240 100% 7%;
+    --primary-background :240, 100%, 3%;
   }
 }

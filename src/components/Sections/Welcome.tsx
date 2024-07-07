@@ -2,7 +2,7 @@ import React from 'react'
 
 function Welcome() {
   return (
-    <section>
+    <section id="about">
       <div className="md:h-screen container pt-16 md:pt-40">
           <div className="flex flex-col items-center">
             <p className="text-2xl md:text-5xl font-bold md:w-2/3 text-center bg-text-gradient text-transparent bg-clip-text">Welcome to the most legendary event of the IEEE Sri Lanka Section</p>

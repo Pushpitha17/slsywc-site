@@ -31,7 +31,7 @@ const data = [
 
 function FAQ() {
   return (
-    <section>
+    <section id="faq">
       <div className="container py-6">
         <div className="text-center">
           <h2 className="text-2xl md:text-5xl font-bold bg-text-gradient text-transparent bg-clip-text">
