@@ -11,8 +11,8 @@ function Footer() {
             <p>
               IEEE SLSYW Congress, the flagship event of the IEEE Sri Lanka
               Section promotes fostering technological innovation while
-              providing opportunities for the undergraduates of the country, to
-              network, and brainstorm.
+              providing opportunities for the undergraduates of the country,
+              to network, and brainstorm.
             </p>
           </div>
           <div className="py-6 md:py-0 min-w-[30ch]">
