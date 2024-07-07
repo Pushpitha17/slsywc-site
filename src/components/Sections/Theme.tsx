@@ -5,6 +5,11 @@ function Theme() {
   return (
     <section id="theme" className="my-12">
       <div className="container">
+        <div className="flex items-center justify-center h-full">
+  <p className="text-2xl md:text-5xl font-bold md:w-2/3 text-center bg-text-gradient text-transparent bg-clip-text">
+    Introducing the Theme of IEEE SLSYWC Congress 2024!
+  </p>
+</div>
         <div className="md:flex md:min-h-screen items-center justify-center gap-6 ">
           {/* <div className="md:hidden mt-20">
             <p className="text-lg font-bold text-center  md:text-start">
