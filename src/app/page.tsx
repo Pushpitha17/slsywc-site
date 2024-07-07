@@ -16,7 +16,7 @@ export default function Home() {
       <div className="h-[2px] w-full bg-main-gradient absolute top-0 z-50"></div>
       <Navbar></Navbar>
       <section className="w-full" id="home">
-        <div className="h-[100svh] md:h-[100vh] relative bg-[url('/assets/bg-hero-mobile.jpg')] md:bg-[url('/assets/bg-hero.jpg')] md:bg-cover">
+        <div className="h-[100svh] md:h-[100vh] relative bg-[url('/assets/new-mobile-bg.jpg')] md:bg-[url('/assets/Home.jpg')] md:bg-cover">
           <div className="h-[69px] md:h-[85px]"></div>
           <img
             className="absolute right-0 bottom-0 mx-auto h-[50%] max-w-full lg:hidden vh-less-600:h-[40%]"
@@ -27,7 +27,7 @@ export default function Home() {
               <div className="mb-6 md:mb-3 font-semibold text-center md:text-start">
                 IEEE Sri Lanka Section Students | YP | WIE Congress{" "}
               </div>
-              <div className="font-bold text-[4rem] leading-[4rem] md:text-[6rem] md:leading-[6rem] text-center md:text-start">
+              <div className="font-bold text-[3.5rem] leading-[4rem] md:text-[6rem] md:leading-[6rem] text-center md:text-start">
                 <div className="md:flex-col inline-flex bg-[linear-gradient(to_right,#0060dd,#04e4fe,#0060dd,#04e4fe,#0060dd)] text-transparent bg-clip-text bg-[length:200%_auto] animate-gradient-animation">
                   <span>SLSYWC</span>
                   <span>&apos;24</span>
