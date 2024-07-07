@@ -28,12 +28,12 @@ function Theme() {
             </div> */}
             <p className="my-6 text-justify md:text-left md:text-[22px]">
               Embark on a transformative journey into the future of digital
-              innovation at this year's largest technical conference in the
+              innovation at this year&apos;s largest technical conference in the
               country, serving as the 13th installment. It would pose as a
               platform that unites researchers, academics, students, and
               industry professionals from diverse backgrounds to discuss and
               share their insights and experiences in accordance with the theme {"  "}
-              <span className="font-bold text-foreground">"Revolutionizing the Digital Landscape"</span>.
+              <span className="font-bold text-foreground">&lsquo;Revolutionizing the Digital Landscape&lsquo;</span>.
             </p>
             {/* <div className="flex">
               <button className="py-2 pl-6 pr-3 text-foreground font-medium border border-red-700 rounded-[8px] text-base flex">

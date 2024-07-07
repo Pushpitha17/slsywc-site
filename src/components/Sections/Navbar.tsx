@@ -54,7 +54,6 @@ function Navbar() {
     } 
   }
 
-  window.addEventListener("scroll", setActiveLinks)
 
   const [activeLink, setActiveLink] = useState("Home")
 
@@ -76,7 +75,7 @@ function Navbar() {
     }
 
     window.addEventListener("scroll", handleScroll)
-
+    window.addEventListener("scroll", setActiveLinks)
     // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll)

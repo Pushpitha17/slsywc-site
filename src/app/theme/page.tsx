@@ -22,14 +22,14 @@ function ThemePage() {
             largest technical conference in the country. It would pose as a
             platform that unites researchers, academics, students, and industry
             professionals from diverse backgrounds to discuss and share their
-            insights and experiences in accordance with the theme {"  "}{" "}
+            insights and experiences in accordance with the theme {"  "}
             <span className="font-bold">
-              “Revolutionizing the Digital Landscape”.
+            &lsquo;Revolutionizing the Digital Landscape&lsquo;.
             </span>
           </p>
         </div>
       </section>
-      <Footer/>
+        <Footer></Footer>
     </main>
   )
 }
