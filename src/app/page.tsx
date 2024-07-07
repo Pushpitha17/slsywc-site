@@ -19,7 +19,7 @@ export default function Home() {
         <div className="h-[100svh] md:h-[100vh] relative bg-[url('/assets/bg-hero-mobile.jpg')] md:bg-[url('/assets/bg-hero.jpg')] md:bg-cover">
           <div className="h-[69px] md:h-[85px]"></div>
           <img
-            className="absolute right-0 bottom-0 mx-auto h-[50%] max-w-full lg:hidden"
+            className="absolute right-0 bottom-0 mx-auto h-[50%] max-w-full lg:hidden vh-less-600:h-[40%]"
             src="/assets/hero_graphic.png"
           ></img>
           <div className="container mx-auto md:h-[calc(98%-150px)] " >
