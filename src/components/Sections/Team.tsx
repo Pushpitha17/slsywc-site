@@ -114,87 +114,95 @@ function Team() {
         <div className="md:container mb-12">
           <div className="hidden md:flex flex-col items-center gap-y-6 my-12">
             <div className="flex">
-              {teamData.chair.map((item) => (
+              {teamData.chair.map((item, index) => (
                 <Chair
+                  key={index}
                   img={item.img}
                   post={item.post}
                   name={item.name}
                   uni={item.uni}
-                ></Chair>
+                />
               ))}
-              {teamData.viceChair.map((item) => (
+              {teamData.viceChair.map((item, index) => (
                 <ViceChair
+                  key={index}
                   img={item.img}
                   pillar={item.pillar}
                   post={item.post}
                   name={item.name}
                   uni={item.uni}
-                ></ViceChair>
+                />
               ))}
             </div>
             <div className="flex">
-              {teamData.Team.slice(0, 4).map((item) => (
+              {teamData.Team.slice(0, 4).map((item, index) => (
                 <TeamMember
+                  key={index}
                   img={item.img}
                   post={item.post}
                   name={item.name}
                   uni={item.uni}
-                ></TeamMember>
+                />
               ))}
             </div>
             <div className="flex">
-              {teamData.Team.slice(4, 7).map((item) => (
+              {teamData.Team.slice(4, 7).map((item, index) => (
                 <TeamMember
+                  key={index}
                   img={item.img}
                   post={item.post}
                   name={item.name}
                   uni={item.uni}
-                ></TeamMember>
+                />
               ))}
             </div>
             <div className="flex">
-              {teamData.Team.slice(7, 10).map((item) => (
+              {teamData.Team.slice(7, 10).map((item, index) => (
                 <TeamMember
+                  key={index}
                   img={item.img}
                   post={item.post}
                   name={item.name}
                   uni={item.uni}
-                ></TeamMember>
+                />
               ))}
             </div>
           </div>
           <div className="md:hidden">
             <div>
               <div className="flex flex-wrap justify-between gap-y-4 my-12">
-                {teamData.chair.map((item) => (
+                {teamData.chair.map((item, index) => (
                   <Chair
+                    key={index}
                     img={item.img}
                     post={item.post}
                     name={item.name}
                     uni={item.uni}
-                  ></Chair>
+                  />
                 ))}
               </div>
               <div className="flex flex-wrap justify-between gap-y-4 my-12">
-                {teamData.viceChair.map((item) => (
+                {teamData.viceChair.map((item, index) => (
                   <ViceChair
+                    key={index}
                     img={item.img}
                     pillar={item.pillar}
                     post={item.post}
                     name={item.name}
                     uni={item.uni}
-                  ></ViceChair>
+                  />
                 ))}
               </div>
             </div>
             <div className="flex flex-wrap justify-between gap-y-4">
-              {teamData.Team.map((item) => (
+              {teamData.Team.map((item, index) => (
                 <TeamMember
+                  key={index}
                   img={item.img}
                   post={item.post}
                   name={item.name}
                   uni={item.uni}
-                ></TeamMember>
+                />
               ))}
             </div>
           </div>
