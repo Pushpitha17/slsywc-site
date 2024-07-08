@@ -8,6 +8,7 @@ const navItems = [
   { label: "Home", href: "hoe" },
   { label: "About", href: "about" },
   { label: "Theme", href: "theme" },
+  { label: "Organizers", href: "organized" },
   { label: "FAQ", href: "faq" }
 ]
 
@@ -48,6 +49,9 @@ function Navbar() {
     } 
     if (elementIsVisibleInViewport(document.getElementById("theme"))) {
         setActiveLink("Theme")
+    } 
+    if (elementIsVisibleInViewport(document.getElementById("organized"))) {
+        setActiveLink("Organizers")
     } 
     if (elementIsVisibleInViewport(document.getElementById("faq"))) {
         setActiveLink("FAQ")

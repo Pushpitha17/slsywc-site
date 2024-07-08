@@ -2,7 +2,7 @@ import React from "react"
 
 function Organized() {
   return (
-    <section className="my-12">
+    <section className="my-12" id="organized">
       <div className="container">
         <div className="text-center">
           <h2 className="text-2xl md:text-5xl font-bold bg-text-gradient text-transparent bg-clip-text uppercase">
