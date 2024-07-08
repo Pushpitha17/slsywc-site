@@ -9,6 +9,7 @@ import Sponsors from "@/components/Sections/Sponsors"
 import PastEvents from "@/components/Sections/PastEvents"
 import Organized from "@/components/Sections/Organized"
 import Footer from "@/components/Sections/Footer"
+import Team from "@/components/Sections/Team"
 
 export default function Home() {
   return (
@@ -79,6 +80,7 @@ export default function Home() {
         <Sponsors />
         <PastEvents />
         <Organized />
+        <Team/>
         <FAQ />
         <Footer></Footer>
         {/* <Countdown/> */}

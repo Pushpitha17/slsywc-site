@@ -91,7 +91,7 @@ function Navbar() {
     >
       <div className="absolute w-full">
         <div className="container mx-auto px-4 relative lg:text-sm">
-          <div className="py-3 md:pt-7 flex justify-between items-center">
+          <div className="py-3 md:py-4 flex justify-between items-center">
             <div className="flex items-center flex-shrink-0">
               <img
                 className={clsx("mr-2 duration-500 h-12", {
