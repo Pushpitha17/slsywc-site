@@ -165,17 +165,6 @@ function Team() {
           <div className="md:hidden">
             <div>
               <div className="flex flex-wrap justify-between gap-y-4 my-12">
-                {teamData.chair.map((item, index) => (
-                  <Chair
-                    key={index}
-                    img={item.img}
-                    post={item.post}
-                    name={item.name}
-                    uni={item.uni}
-                  />
-                ))}
-              </div>
-              <div className="flex flex-wrap justify-between gap-y-4 my-12">
                 {teamData.viceChair.map((item, index) => (
                   <ViceChair
                     key={index}
