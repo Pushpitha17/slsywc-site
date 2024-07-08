@@ -2,7 +2,10 @@ import React from "react"
 
 const teamData = {
   chair: [
-    {
+    
+  ],
+  viceChair: [
+  {
       img: "Priyan.png",
       post: "Chair",
       name: "Priyan Dilshan",
@@ -13,9 +16,7 @@ const teamData = {
       post: "Secretary",
       name: "Amirah Rasmin",
       uni: "IIT"
-    }
-  ],
-  viceChair: [
+    },
     {
       img: "Uvindu.png",
       post: "Vice Chair",
