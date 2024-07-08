@@ -73,7 +73,7 @@ const teamData = {
       uni: "SLIIT"
     },
     {
-      img: "Tathila.png",
+      img: "Pragash.png",
       post: "Industry Engagement",
       name: "Pragash Sasitharan",
       uni: "IIT"
