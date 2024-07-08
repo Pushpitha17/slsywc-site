@@ -8,12 +8,14 @@ const teamData = {
   {
       img: "Priyan.png",
       post: "Chair",
+      pillar: " ",
       name: "Priyan Dilshan",
       uni: "UOM"
     },
     {
       img: "Amirah.png",
       post: "Secretary",
+      pillar: " ",
       name: "Amirah Rasmin",
       uni: "IIT"
     },
@@ -115,15 +117,6 @@ function Team() {
         <div className="md:container mb-12">
           <div className="hidden md:flex flex-col items-center gap-y-6 my-12">
             <div className="flex">
-              {teamData.chair.map((item, index) => (
-                <Chair
-                  key={index}
-                  img={item.img}
-                  post={item.post}
-                  name={item.name}
-                  uni={item.uni}
-                />
-              ))}
               {teamData.viceChair.map((item, index) => (
                 <ViceChair
                   key={index}
