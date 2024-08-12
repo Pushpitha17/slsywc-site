@@ -1,80 +1,106 @@
-'use client'
-import React, { useEffect, useState } from "react"
+"use client"
+import React, { useState, useEffect, useRef } from "react"
+import { useInView } from "react-intersection-observer"
+import AnimatedCounter from "../Elements/AnimatedCounter"
+import { orbitron, silkscreen } from "@/app/fonts"
 
-const Countdown = () => {
+interface Counts {
+  days: number
+  hours: number
+  minutes: number
+  seconds: number
+}
 
-  const targetDate = "2024/07/10"
+interface CountdownTimerProps {
+  targetDate: string
+}
 
-  const calculateTimeLeft = () => {
-    const difference = +new Date(targetDate) - +new Date()
-    let timeLeft = {
-      days: 0,
-      hours: 0,
-      minutes: 0,
-      seconds: 0
+const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
+  const [timeLeft, setTimeLeft] = useState(0)
+  const [counts, setCounts] = useState<Counts>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  })
+  const [shouldAnimate, setShouldAnimate] = useState<boolean>(true)
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
+  const { ref, inView } = useInView({
+    threshold: 1,
+    triggerOnce: true,
+    delay: 750
+  })
+
+  const updateCount = (): void => {
+    let difference = timeLeft
+
+    let newCounts: Counts = {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / 1000 / 60) % 60),
+      seconds: Math.floor((difference / 1000) % 60)
     }
 
-
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60)
-      }
-    } else {
-      timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 }
+    if (difference < 0) {
+      if (intervalRef.current) clearInterval(intervalRef.current)
+      newCounts = { days: 0, hours: 0, minutes: 0, seconds: 0 }
     }
-
-    return timeLeft
+    setCounts(newCounts)
   }
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
-  const [initialLoad, setInitialLoad] = useState(true)
+  const updateTimeLeft = () => {
+    const newTimeleft = new Date(timeLeft).getTime() - 1000
+    setTimeLeft(newTimeleft)
+    console.log("updating time", newTimeleft)
+  }
 
   useEffect(() => {
-    if (initialLoad) {
-      // Animate to the remaining time from zero
-      const animationDuration = 1000 // 1 second for animation
-      const increment = 100 // interval for the animation
-      const steps = animationDuration / increment
+    console.log("Counter Use EFfect Fired")
 
-      let counter = 0
-      const interval = setInterval(() => {
-        const currentStep = {
-          days: Math.floor((timeLeft.days / steps) * counter),
-          hours: Math.floor((timeLeft.hours / steps) * counter),
-          minutes: Math.floor((timeLeft.minutes / steps) * counter),
-          seconds: Math.floor((timeLeft.seconds / steps) * counter)
-        }
-        setTimeLeft(currentStep)
-
-        if (counter >= steps) {
-          clearInterval(interval)
-          setInitialLoad(false)
-        }
-        counter++
-      }, increment)
-
-      return () => clearInterval(interval)
-    } else {
-      const timer = setTimeout(() => {
-        setTimeLeft(calculateTimeLeft())
-      }, 1000)
-
-      return () => clearTimeout(timer)
+    const calculateTimeLeft = (): void => {
+      let difference = +new Date(targetDate) - +new Date()
+      setTimeLeft(difference)
     }
-  }, [timeLeft, initialLoad])
 
+    if (inView && shouldAnimate) {
+      calculateTimeLeft()
+      setTimeout(() => {
+        setShouldAnimate(false)
+      }, 2000)
+    }
+  }, [targetDate, inView])
+
+  useEffect(() => {
+    updateCount()
+  }, [timeLeft])
+
+  useEffect(() => {
+    if (!shouldAnimate) {
+      setTimeout(updateTimeLeft, 1000)
+    }
+  }, [counts, shouldAnimate])
 
   return (
-    <div>
-      <div>{timeLeft.days} Days</div>
-      <div>{timeLeft.hours} Hours</div>
-      <div>{timeLeft.minutes} Minutes</div>
-      <div>{timeLeft.seconds} Seconds</div>
+    <div
+      ref={ref}
+      className="flex flex-col justify-center items-center space-x-4 text-white bg-main-gradient h-56 md:h-72"
+    > <div className="mb-8 md:mb-16 text-xl md:text-4xl tracking-widest">
+        <p className={orbitron.className}>Event Will Commence In</p>
+    </div>
+      <div className="container flex justify-between max-w-[720px]">
+        {(Object.entries(counts) as [keyof Counts, number][]).map(
+          ([unit, value]) => (
+            <div key={unit} className={`${orbitron.className} text-center`}>
+              <div className="md:text-4xl font-bold mb-2">
+                <AnimatedCounter value={value} shouldAnimate={shouldAnimate} />
+              </div>
+              <div className="text-sm uppercase">{unit}</div>
+            </div>
+          )
+        )}
+      </div>
     </div>
   )
 }
 
-export default Countdown
+export default CountdownTimer
