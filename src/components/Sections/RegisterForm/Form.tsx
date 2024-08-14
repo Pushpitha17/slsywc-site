@@ -148,14 +148,14 @@ function RegisterForm() {
           form={form}
           selectItems={branches}
           name="branch"
-          placeholder="Select a Membership Category"
+          placeholder="Choose"
           formDescription="Please mention the student branch affiliation you are volunteering, or you have volunteered."
         >
           <p>7. IEEE Student Branch Affiliation</p>
         </CustomSelectInput>
         {branch == "23. Other" && (
           <CustomTextInput form={form} name="otherAffiliations" textArea={true}>
-            Please specify your affiliation (If you're not affiliated to any
+            Please specify your affiliation (If you&apos;re not affiliated to any
             IEEE Student Branch, please provide the details.)
           </CustomTextInput>
         )}
@@ -177,11 +177,11 @@ function RegisterForm() {
               <li>5. IEEE Technical Society Sri Lanka Chapter</li>
             </ol>
             <p>
-              Please Select "<span className="font-bold">Yes</span>".
+              Please Select &quot;<span className="font-bold">Yes</span>&quot;.
             </p>
             <p>
-              Sub-Committee members of the above OUs, please select "
-              <span className="font-bold">No</span>".
+              Sub-Committee members of the above OUs, please select &quot;
+              <span className="font-bold">No</span>&quot;.
             </p>
           </div>
         </CustomRadioInput>
@@ -224,7 +224,7 @@ function RegisterForm() {
               placeholder="Select joining dates"
             >
               <p>
-                Please select the days you will be joining for IEEE SLSYWC'24:
+                Please select the days you will be joining for IEEE SLSYWC&apos;24:
               </p>
             </CustomSelectInput>
             {joiningDays == "One day only" && (
@@ -258,7 +258,7 @@ function RegisterForm() {
               <div className="pb-1">IEEE Membership Number</div>
               <p className="text-xs">
                 Having an IEEE membership is not compulsory to be part of IEEE
-                SLSYWC'24. If you are not an IEEE member, please follow the
+                SLSYWC&apos;24. If you are not an IEEE member, please follow the
                 attached link to{" "}
                 <span className="font-bold">
                   create an account without doing any payments.
