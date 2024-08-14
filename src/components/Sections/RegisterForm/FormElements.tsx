@@ -16,6 +16,7 @@ import {
   SelectValue
 } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
+import { Textarea } from "@/components/ui/textarea"
 
 const TextInput = ({
   form,
@@ -54,11 +55,13 @@ const TextInput = ({
 const CustomTextInput = ({
   form,
   name,
-  children
+  children,
+  textArea
 }: {
   form: any
   name: string
   children: React.ReactNode
+  textArea: boolean
 }) => (
   <FormField
     control={form.control}
@@ -70,7 +73,7 @@ const CustomTextInput = ({
             <FormLabel className="w-full text-[1rem]">{children}</FormLabel>
           </div>
           <FormControl className="sm:w-full">
-            <Input {...field} />
+            {textArea ? <Textarea {...field} /> : <Input {...field} />}
           </FormControl>
         </div>
         <FormMessage className="pt-2 text-red-600" />
@@ -114,8 +117,10 @@ const SelectInput = ({
               </SelectTrigger>
             </FormControl>
             <SelectContent className="text-primary-foreground bg-primary-background rounded">
-              {selectItems.map((item,i) => (
-                <SelectItem value={item} key={i}>{item}</SelectItem>
+              {selectItems.map((item, i) => (
+                <SelectItem value={item} key={i}>
+                  {item}
+                </SelectItem>
               ))}
             </SelectContent>
           </Select>
@@ -159,8 +164,10 @@ const CustomSelectInput = ({
                 </SelectTrigger>
               </FormControl>
               <SelectContent className="text-primary-foreground bg-primary-background rounded">
-                {selectItems.map((item,i) => (
-                  <SelectItem className="text-left" value={item} key={i}>{item}</SelectItem>
+                {selectItems.map((item, i) => (
+                  <SelectItem className="text-left" value={item} key={i}>
+                    {item}
+                  </SelectItem>
                 ))}
               </SelectContent>
             </Select>
@@ -198,7 +205,7 @@ const CheckBoxesInput = ({
           <FormField
             key={item.id}
             control={form.control}
-            name="items"
+            name={name}
             render={({ field }) => {
               return (
                 <FormItem
@@ -209,6 +216,7 @@ const CheckBoxesInput = ({
                     <Checkbox
                       checked={field.value?.includes(item.id)}
                       onCheckedChange={(checked) => {
+                        console.log(field.value,item)
                         return checked
                           ? field.onChange([...field.value, item.id])
                           : field.onChange(
@@ -270,8 +278,11 @@ const RadioInput = ({
                     layout === "Col" ? "md:flex-col" : "flex-row"
                   } space-x-6`}
                 >
-                  {selectItems.map((item,i) => (
-                    <FormItem className="flex items-center space-x-3 space-y-0" key={i}>
+                  {selectItems.map((item, i) => (
+                    <FormItem
+                      className="flex items-center space-x-3 space-y-0"
+                      key={i}
+                    >
                       <FormControl>
                         <RadioGroupItem value={item} />
                       </FormControl>
@@ -316,10 +327,13 @@ const CustomRadioInput = ({
               <RadioGroup
                 onValueChange={field.onChange}
                 defaultValue={field.value}
-                className="flex pl-4 pt-4 space-y-1"
+                className="flex pl-4 pt-4 flex-col space-y-2"
               >
-                {selectItems.map((item,i) => (
-                  <FormItem className="flex items-center space-x-3 space-y-0" key={i}>
+                {selectItems.map((item, i) => (
+                  <FormItem
+                    className="flex items-center space-x-3 space-y-0"
+                    key={i}
+                  >
                     <FormControl>
                       <RadioGroupItem value={item} />
                     </FormControl>
