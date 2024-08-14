@@ -155,8 +155,8 @@ function RegisterForm() {
         </CustomSelectInput>
         {branch == "23. Other" && (
           <CustomTextInput form={form} name="otherAffiliations" textArea={true}>
-            Please specify your affiliation (If you&apos;re not affiliated to any
-            IEEE Student Branch, please provide the details.)
+            Please specify your affiliation (If you&apos;re not affiliated to
+            any IEEE Student Branch, please provide the details.)
           </CustomTextInput>
         )}
         <CustomRadioInput
@@ -224,7 +224,8 @@ function RegisterForm() {
               placeholder="Select joining dates"
             >
               <p>
-                Please select the days you will be joining for IEEE SLSYWC&apos;24:
+                Please select the days you will be joining for IEEE
+                SLSYWC&apos;24:
               </p>
             </CustomSelectInput>
             {joiningDays == "One day only" && (
@@ -297,104 +298,116 @@ function RegisterForm() {
                 Mention your IEEE accomplishments or volunteering experiences
               </div>
             </CustomTextInput>
+            <div className="font-bold text-lg pb-4">
+              IEEE SL SYW Congress 2024
+            </div>
+
+            <p className="pb-2">
+              Only a selected number of participants will be entertained at the
+              IEEE SL SYW Congress 2024. The following respective entities under
+              the IEEE Sri Lanka Section will conduct the selection of
+              delegates:
+            </p>
+            <ul className="list-disc pl-6">
+              <li>IEEE Sri Lanka Section</li>
+              <li>IEEE Sri Lanka Section Student Activities Committee</li>
+              <li>IEEE Young Professionals Sri Lanka</li>
+              <li>IEEE Women in Engineering Sri Lanka</li>
+              <li>IEEE Sri Lanka Section SIGHT</li>
+              <li>IEEE Sri Lanka Section Technical Society Chapters</li>
+              <li>IEEE Student Branches</li>
+            </ul>
+
+            <p>
+              Selected delegates are obligated to pay the delegate fee to
+              participate in the IEEE SL SYW Congress 2024.
+            </p>
+
+            <ul className="font-semibold list-disc pl-6 space-y-1">
+              <li>Delegate Fee will be valued at LKR ****.</li>
+              <li>
+                If the Delegate has an ****** the delegate will be eligible for
+                a LKR 500/= discount. [Note: An IEEE SPS Student Membership
+                (Essential Package) costs USD 0.50 ~ LKR 170.00]
+              </li>
+              <li>
+                Please{" "}
+                <a
+                  href="https://docs.google.com/document/d/1hxEehs2D3NhkTWAkt4zdSvNDf1_xAVEq5_c1MbOciSQ/edit?usp=sharing"
+                  target="_blank"
+                  className="underline"
+                >
+                  Click Here
+                </a>
+                , to get a step-by-step tutorial on obtaining the IEEE SPS
+                Membership.
+              </li>
+            </ul>
+            <CustomTextInput form={form} name="whatEncouraged" textArea={true}>
+              <div>
+                We would like to know what encouraged you to take part in IEEE
+                SL SYW Congress 2024.
+              </div>
+            </CustomTextInput>
+            <CheckBoxesInput
+              form={form}
+              name="previousParticipations"
+              checkItems={participation_years}
+            >
+              <div>
+                If you have participated in previous years, select the years you
+                participated.
+              </div>
+            </CheckBoxesInput>
+            <CustomRadioInput
+              form={form}
+              name="learn"
+              selectItems={["Yes", "No"]}
+            >
+              <div>
+                Would you like to learn how to become a member of IEEE Technical
+                Societies?
+              </div>
+            </CustomRadioInput>
           </>
         )}
-        <div className="font-bold text-lg pb-4">IEEE SL SYW Congress 2024</div>
 
-        <p className="pb-2">
-          Only a selected number of participants will be entertained at the IEEE
-          SL SYW Congress 2024. The following respective entities under the IEEE
-          Sri Lanka Section will conduct the selection of delegates:
-        </p>
-        <ul className="list-disc pl-6">
-          <li>IEEE Sri Lanka Section</li>
-          <li>IEEE Sri Lanka Section Student Activities Committee</li>
-          <li>IEEE Young Professionals Sri Lanka</li>
-          <li>IEEE Women in Engineering Sri Lanka</li>
-          <li>IEEE Sri Lanka Section SIGHT</li>
-          <li>IEEE Sri Lanka Section Technical Society Chapters</li>
-          <li>IEEE Student Branches</li>
-        </ul>
-
-        <p>
-          Selected delegates are obligated to pay the delegate fee to
-          participate in the IEEE SL SYW Congress 2024.
-        </p>
-
-        <ul className="font-semibold list-disc pl-6 space-y-1">
-          <li>Delegate Fee will be valued at LKR ****.</li>
-          <li>
-            If the Delegate has an ****** the delegate will be eligible for a
-            LKR 500/= discount. [Note: An IEEE SPS Student Membership (Essential
-            Package) costs USD 0.50 ~ LKR 170.00]
-          </li>
-          <li>
-            Please{" "}
-            <a
-              href="https://docs.google.com/document/d/1hxEehs2D3NhkTWAkt4zdSvNDf1_xAVEq5_c1MbOciSQ/edit?usp=sharing"
-              target="_blank"
-              className="underline"
-            >
-              Click Here
-            </a>
-            , to get a step-by-step tutorial on obtaining the IEEE SPS
-            Membership.
-          </li>
-        </ul>
-        <CustomTextInput form={form} name="whatEncouraged" textArea={true}>
-          <div>
-            We would like to know what encouraged you to take part in IEEE SL
-            SYW Congress 2024.
-          </div>
-        </CustomTextInput>
-        <CheckBoxesInput
-          form={form}
-          name="privacy"
-          checkItems={participation_years}
-        >
-          <div>
-            If you have participated in previous years, select the years you
-            participated.
-          </div>
-        </CheckBoxesInput>
-        <CustomRadioInput form={form} name="learn" selectItems={["Yes", "No"]}>
-          <div>
-            Would you like to learn how to become a member of IEEE Technical
-            Societies?
-          </div>
-        </CustomRadioInput>
-        <div className="font-bold text-lg">Delegate Pack</div>
-        <p>Delegate Pack Includes : </p>
-        <ul>
-          <li>T-Shirt</li>
-          <li>File Cover</li>
-          <li>Stickers etc.</li>
-        </ul>
-        <div>
-          <div className="flex flex-col items-center my-6">
-            <p className="w-full mb-4 underline">T-shirt Design</p>
-            <img
-              src={`/assets/form/tshirt_design.jpg`}
-              alt=""
-              className="w-full md:h-96 md:w-auto"
-            />
-          </div>
-          <div className="flex flex-col items-center my-6">
-            <p className="w-full mb-4 underline">Size Guide</p>
-            <img
-              src={`/assets/form/size_guide.jpg`}
-              alt=""
-              className="w-full md:h-96 md:w-auto"
-            />
-          </div>
-        </div>
-        <SelectInput
-          form={form}
-          selectItems={thsirt_size}
-          name="tshirtSize"
-          label="T-shirt Size"
-          placeholder="Select T-shirt Size"
-        ></SelectInput>
+        {exco && (
+          <>
+            <div className="font-bold text-lg">Delegate Pack</div>
+            <p>Delegate Pack Includes : </p>
+            <ul>
+              <li>T-Shirt</li>
+              <li>File Cover</li>
+              <li>Stickers etc.</li>
+            </ul>
+            <div>
+              <div className="flex flex-col items-center my-6">
+                <p className="w-full mb-4 underline">T-shirt Design</p>
+                <img
+                  src={`/assets/form/tshirt_design.jpg`}
+                  alt=""
+                  className="w-full md:h-96 md:w-auto"
+                />
+              </div>
+              <div className="flex flex-col items-center my-6">
+                <p className="w-full mb-4 underline">Size Guide</p>
+                <img
+                  src={`/assets/form/size_guide.jpg`}
+                  alt=""
+                  className="w-full md:h-96 md:w-auto"
+                />
+              </div>
+            </div>
+            <SelectInput
+              form={form}
+              selectItems={thsirt_size}
+              name="tshirtSize"
+              label="T-shirt Size"
+              placeholder="Select T-shirt Size"
+            ></SelectInput>
+          </>
+        )}
 
         <div className="font-bold text-lg">Terms & Conditions</div>
 
