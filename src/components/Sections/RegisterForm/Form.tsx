@@ -1,9 +1,10 @@
 "use client"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { useForm, useWatch } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import { Button } from "@/components/ui/button"
+import { useRouter } from 'next/navigation';
 import {
   Form,
   FormControl,
@@ -32,6 +33,7 @@ import {
   participation_years,
   thsirt_size
 } from "./data"
+import { Loader2 } from "lucide-react"
 
 const formSchema = z.object({
   email: z.string().email().min(1, "Email is required"),
@@ -41,21 +43,29 @@ const formSchema = z.object({
   contact: z.string().min(1, "Contact is required"),
   nic: z.string().min(1, "NIC is required"),
   gender: z.string().min(1, "Gender is required"),
-  address: z.string().min(1, "Address is required"),
   branch: z.string().min(1, "Branch is required"),
-  otherAffiliations: z.string().optional(),
+  otherAffiliations: z.string().min(1, "Please state your affiliation."),
   partOfExCo: z.string().min(1, "Yes or No is required"),
-  membershipNo: z.string().min(1, "Please provide a Membership Number."),
+  membershipNo: z.string().optional(),
   membershipCategory: z.string().min(1, "Please select a Membership Category."),
-  currentExcoEntities: z.string().min(1, "Please select one or More entity."),
+  currentExcoEntities: z
+    .string()
+    .array()
+    .nonempty("Please select the Entity/Entities."),
   positions: z.string().min(1, "Please select one or More entity."),
   joiningDays: z.string().min(1, "Please select Joining Days."),
   joiningOneDay: z.string().optional(),
   hasMembership: z.string().min(1, "Please select an option."),
-  volunteeringEntities: z.string().optional(),
+  volunteeringEntities: z
+    .string()
+    .array()
+    .nonempty("Please select the Entity/Entities."),
   volunteeringExperience: z.string().optional(),
   whatEncouraged: z.string().min(1, "Please state your answer."),
-  previousParticipations: z.string().min(1, "Please select an option."),
+  previousParticipations: z
+    .string()
+    .array()
+    .nonempty("Please select an option."),
   learn: z.string().min(1, "Please select an option."),
   tShirtSize: z.string().min(1, "Please select an option."),
   privacy: z.string().array().nonempty("Please agree to the policy."),
@@ -76,21 +86,21 @@ function RegisterForm() {
       gender: "",
       branch: "",
       otherAffiliations: "",
+      //for all
       partOfExCo: "",
-      //excetive committe details
       membershipNo: "",
       membershipCategory: "",
-      currentExcoEntities: "",
+      //excetive committe details
+      currentExcoEntities: [],
       positions: "",
       joiningDays: "",
       joiningOneDay: "",
-      //membership details
+      //Non exco membership details
       hasMembership: "",
-      volunteeringEntities: "",
+      volunteeringEntities: [],
       volunteeringExperience: "",
-      //selection
       whatEncouraged: "",
-      previousParticipations: "",
+      previousParticipations: [],
       learn: "",
       //delegatepack
       tShirtSize: "",
@@ -100,14 +110,76 @@ function RegisterForm() {
     }
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  const { push } = useRouter();
+
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values)
+    const res = await fetch("/api/register", {
+      method: "POST",
+      body: JSON.stringify(values)
+    })
+
+    push(`/register/confirm`) 
+    return true
+  }
+
+  if (JSON.stringify(form.formState.errors) !== "{}") {
+    console.log("errors", form.formState.errors)
   }
 
   const exco = useWatch({ control: form.control, name: "partOfExCo" })
   const branch = useWatch({ control: form.control, name: "branch" })
   const joiningDays = useWatch({ control: form.control, name: "joiningDays" })
-  console.log(exco)
+
+  useEffect(() => {
+    if (branch !== "23. Other") {
+      form.setValue("otherAffiliations", "N/A", { shouldValidate: true })
+    } else {
+      form.setValue("otherAffiliations", "", { shouldValidate: true })
+    }
+  }, [branch])
+
+  const { isSubmitting, isSubmitted, isSubmitSuccessful } = form.formState
+
+  console.log({ isSubmitting, isSubmitted, isSubmitSuccessful })
+
+  useEffect(() => {
+    const { setValue } = form
+
+    if (exco === "Yes") {
+      setValue("volunteeringEntities", ["N/A"])
+      setValue("volunteeringExperience", "N/A")
+      setValue("whatEncouraged", "N/A")
+      setValue("previousParticipations", ["N/A"])
+      setValue("learn", "N/A")
+      //set defaults
+      setValue("positions", "")
+      setValue("currentExcoEntities", [""])
+      setValue("joiningDays", "")
+      setValue("joiningOneDay", "")
+    }
+
+    if (exco === "No") {
+      setValue("positions", "N/A")
+      setValue("currentExcoEntities", ["N/A"])
+      setValue("joiningDays", "N/A")
+      setValue("joiningOneDay", "N/A")
+      //set defaults
+
+      setValue("volunteeringEntities", [""])
+      setValue("volunteeringExperience", "")
+      setValue("whatEncouraged", "")
+      setValue("previousParticipations", [""])
+      setValue("learn", "")
+    }
+  }, [exco])
+
+  useEffect(() => {
+    if (joiningDays !== "One day only") {
+      form.setValue("joiningOneDay", "N/A")
+    }
+  }, [joiningDays])
 
   return (
     <Form {...form}>
@@ -115,9 +187,6 @@ function RegisterForm() {
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-8 select-none"
       >
-        <div className="font-bold text-lg">
-          Section 1 : Personal Information
-        </div>
         <TextInput
           form={form}
           name="fullName"
@@ -133,8 +202,8 @@ function RegisterForm() {
         <TextInput
           form={form}
           name="contact"
-          label="5. Contact Number"
-          formDescription="Whatsapp Number (Ex : +94705608289) "
+          label="5. Contact Number (Whatsapp)"
+          placeholder="Ex : +94705608289"
         ></TextInput>
         <TextInput form={form} name="nic" label="6. NIC Number"></TextInput>
         <RadioInput
@@ -161,13 +230,45 @@ function RegisterForm() {
         )}
         <CustomRadioInput
           form={form}
+          name="hasMembership"
+          selectItems={["Yes", "No"]}
+        >
+          <div>Do you have an active IEEE membership?</div>
+        </CustomRadioInput>
+        <CustomTextInput form={form} name="membershipNo" textArea={false}>
+          <div className="pb-1">IEEE Membership Number</div>
+          <p className="text-xs">
+            Having an IEEE membership is not compulsory to be part of IEEE
+            SLSYWC&apos;24. If you are not an IEEE member, please follow the
+            attached link to{" "}
+            <span className="font-bold">
+              create an account without doing any payments.
+            </span>{" "}
+            <a
+              href="https://bit.ly/3F3L6kf"
+              target="_blank"
+              className="underline"
+            >
+              (Click here to join IEEE)
+            </a>
+          </p>
+        </CustomTextInput>
+        <SelectInput
+          form={form}
+          selectItems={membership_catgories}
+          name="membershipCategory"
+          label="Membership Category"
+          placeholder="Select a Membership Category"
+        ></SelectInput>
+        <CustomRadioInput
+          form={form}
           name="partOfExCo"
           selectItems={["Yes", "No"]}
         >
           <div>
             <p className="pb-4">
-              If Are you part of an{" "}
-              <span className="font-semibold">Executive Committe</span>
+              Are you part of an{" "}
+              <span className="font-semibold">Executive Committee</span>
             </p>
             <ol className="pl-4 pb-4">
               <li>1. IEEE Sri Lanka Section</li>
@@ -177,7 +278,8 @@ function RegisterForm() {
               <li>5. IEEE Technical Society Sri Lanka Chapter</li>
             </ol>
             <p>
-              Please Select &quot;<span className="font-bold">Yes</span>&quot;.
+              If Yes, Please Select &quot;<span className="font-bold">Yes</span>
+              &quot;.
             </p>
             <p>
               Sub-Committee members of the above OUs, please select &quot;
@@ -192,7 +294,7 @@ function RegisterForm() {
               A delegate fee of LKR ***** will be charged from all delegates
               participating in the IEEE SL SYW Congress 2024.
             </div>
-            <CustomTextInput form={form} name="membershipNo" textArea={false}>
+            {/* <CustomTextInput form={form} name="membershipNo" textArea={false}>
               <div>Please provide your IEEE Membership Number.</div>
             </CustomTextInput>
             <SelectInput
@@ -201,7 +303,7 @@ function RegisterForm() {
               name="membershipCategory"
               label="Membership Category"
               placeholder="Select a Membership Category"
-            ></SelectInput>
+            ></SelectInput> */}
             <CheckBoxesInput
               form={form}
               checkItems={exco_entities}
@@ -212,6 +314,16 @@ function RegisterForm() {
                 Committee Member in
               </div>
             </CheckBoxesInput>
+            <CustomTextInput form={form} name="positions" textArea={false}>
+              <div className="pb-2">
+                Please state your position in the respective Ex-Com(s) you are a
+                part of.{" "}
+              </div>
+              <p className="text-xs">
+                If you are a member of an IEEE Sri Lanka Section Technical
+                Society Chapter, please mention the Technical Society as well
+              </p>
+            </CustomTextInput>
             <CustomSelectInput
               form={form}
               selectItems={[
@@ -247,39 +359,6 @@ function RegisterForm() {
         )}
         {exco === "No" && (
           <>
-            <div className="font-bold text-lg">IEEE Membership Details</div>
-            <CustomRadioInput
-              form={form}
-              name="hasMembership"
-              selectItems={["Yes", "No"]}
-            >
-              <div>Do you have an active IEEE membership?</div>
-            </CustomRadioInput>
-            <CustomTextInput form={form} name="membershipNo" textArea={false}>
-              <div className="pb-1">IEEE Membership Number</div>
-              <p className="text-xs">
-                Having an IEEE membership is not compulsory to be part of IEEE
-                SLSYWC&apos;24. If you are not an IEEE member, please follow the
-                attached link to{" "}
-                <span className="font-bold">
-                  create an account without doing any payments.
-                </span>{" "}
-                <a
-                  href="https://bit.ly/3F3L6kf"
-                  target="_blank"
-                  className="underline"
-                >
-                  (Click here to join IEEE)
-                </a>
-              </p>
-            </CustomTextInput>
-            <SelectInput
-              form={form}
-              selectItems={membership_catgories}
-              name="membershipCategory"
-              label="Membership Category"
-              placeholder="Select a Membership Category"
-            ></SelectInput>
             <CheckBoxesInput
               form={form}
               name="volunteeringEntities"
@@ -402,7 +481,7 @@ function RegisterForm() {
             <SelectInput
               form={form}
               selectItems={thsirt_size}
-              name="tshirtSize"
+              name="tShirtSize"
               label="T-shirt Size"
               placeholder="Select T-shirt Size"
             ></SelectInput>
@@ -436,8 +515,20 @@ function RegisterForm() {
         </CheckBoxesInput>
 
         <div className="py-4">
-          <button className="bg-primary-foreground text-black px-6 py-1 rounded">
-            Submit
+          <button
+            className="bg-primary-foreground text-black px-6 py-1 rounded w-24 flex justify-center"
+            type="submit"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? (
+              <img
+                src={`/assets/form/loading_spinner.svg`}
+                alt=""
+                className="w-6 h-6"
+              />
+            ) : (
+              "Submit"
+            )}
           </button>
         </div>
       </form>

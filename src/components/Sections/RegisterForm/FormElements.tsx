@@ -22,12 +22,14 @@ const TextInput = ({
   form,
   name,
   label,
-  formDescription
+  formDescription,
+  placeholder
 }: {
   form: any
   name: string
   label: string
   formDescription?: string
+  placeholder?: string
 }) => (
   <FormField
     control={form.control}
@@ -42,7 +44,7 @@ const TextInput = ({
             <p className="pl-2">:</p>
           </div>
           <FormControl className="sm:w-full">
-            <Input {...field} />
+            <Input {...field} placeholder={placeholder} />
           </FormControl>
         </div>
         <FormDescription>{formDescription}</FormDescription>

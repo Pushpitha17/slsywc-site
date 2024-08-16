@@ -5,9 +5,9 @@ function Register() {
   return (
     <div className="max-w-[720px] mx-auto text-primary-foreground">
       <div className="container">
-        <div className="py-5">
+        <div className="py-5 mb-10">
           <div className="text-2xl">
-            <p className="font-semibold">
+            <p className="font-semibold underline leading-10 md:text-center">
               IEEE Sri Lanka Section Students | YP | WIE Congress 2024
               Registration Form
             </p>
