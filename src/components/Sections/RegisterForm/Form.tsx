@@ -124,11 +124,12 @@ function RegisterForm() {
 
   const [doubleChecked, setDoubleChecked] = useState(false)
   const [dialogOpen, setDialogOpen] = useState(false)
+  const [success, setSuccess] = useState(false)
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     if (!doubleChecked) {
       setDialogOpen(true)
-      return
+      return 
     }
 
     console.log(values)
@@ -136,7 +137,7 @@ function RegisterForm() {
       method: "POST",
       body: JSON.stringify(values)
     })
-
+    setSuccess(true)
     return true
   }
 
@@ -157,14 +158,23 @@ function RegisterForm() {
   }, [branch])
 
   const { isSubmitting, isSubmitted, isSubmitSuccessful } = form.formState
+  console.log(form.formState)
 
   console.log({ isSubmitting, isSubmitted, isSubmitSuccessful })
 
   useEffect(() => {
-    if (isSubmitted) {
+    if (success) {
       push(`/register/confirm`)
     }
-  }, [isSubmitted])
+  }, [success])
+
+  useEffect(() => {
+
+    if (doubleChecked) {
+      form.handleSubmit(onSubmit)()
+    }
+
+  }, [doubleChecked])
 
   useEffect(() => {
     const { setValue, reset, getValues } = form

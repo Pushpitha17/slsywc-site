@@ -22,7 +22,6 @@ export async function POST(req: Request) {
     const sheets = google.sheets({ version: "v4", auth })
 
     const formData = await req.json()
-    console.log(formData)
 
     const data = await sheets.spreadsheets.values.get({
       spreadsheetId: "1tBM7UMLE9PQN5tyV3haikz9EBqqWZvxgtN1LCA0coWY",
@@ -37,7 +36,7 @@ export async function POST(req: Request) {
       spreadsheetId: "1tBM7UMLE9PQN5tyV3haikz9EBqqWZvxgtN1LCA0coWY",
       valueInputOption: "USER_ENTERED",
       requestBody: {
-        values: [newRow]
+        values: [[new Date().toLocaleString(), ...newRow]]
       },
       range: "Sheet1"
     })
@@ -91,12 +90,14 @@ export async function POST(req: Request) {
       const newRow = Object.values(RegistrationDetails).map((value) =>
         Array.isArray(value) ? value.join(", ") : value
       )
+      const appendRow = [new Date().toLocaleString(), ...newRow]
+      console.log(appendRow)
 
       const update = await sheets.spreadsheets.values.append({
         spreadsheetId: "1vHO1uqEgp_mWWLvotO8pNYxH2YMcqvlmviYNU7VdAC0",
         valueInputOption: "USER_ENTERED",
         requestBody: {
-          values: [newRow]
+          values: [appendRow]
         },
         range: "Exco"
       })
@@ -126,12 +127,13 @@ export async function POST(req: Request) {
       const newRow = Object.values(RegistrationDetails).map((value) =>
         Array.isArray(value) ? value.join(", ") : value
       )
-
+      const appendRow = [new Date().toLocaleString(), ...newRow]
+      console.log(appendRow)
       const update = await sheets.spreadsheets.values.append({
         spreadsheetId: "1vHO1uqEgp_mWWLvotO8pNYxH2YMcqvlmviYNU7VdAC0",
         valueInputOption: "USER_ENTERED",
         requestBody: {
-          values: [newRow]
+          values: [appendRow]
         },
         range: "NonExco"
       })
