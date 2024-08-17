@@ -3,13 +3,12 @@ import React from "react"
 
 function Register() {
   return (
-    <div className="max-w-[720px] mx-auto text-primary-foreground">
+    <div className="max-w-[720px] mx-auto text-primary-foreground mt-28">
       <div className="container">
-        <div className="py-5 mb-10">
-          <div className="text-2xl">
-            <p className="font-semibold underline leading-10 md:text-center">
-              IEEE Sri Lanka Section Students | YP | WIE Congress 2024
-              Registration Form
+        <div className="mb-10">
+          <div className="items-center justify-center flex">
+            <p className="md:text-2xl font-bold leading-5 md:text-center md:w-full text-center bg-text-gradient text-transparent bg-clip-text">
+              IEEE Sri Lanka Section Students | YP | WIE Congress 2024 Registration Form
             </p>
           </div>
         </div>
