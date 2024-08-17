@@ -5,5 +5,5 @@ export default function RegisterPageLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return <div className="min-h-screen bg-primary-background">{children}</div>
+  return <div className="min-h-screen bg-primary-background bg-[url('/assets/bg-form.jpg')] bg-cover">{children}</div>
 }
