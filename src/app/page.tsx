@@ -39,7 +39,7 @@ export default function Home() {
                   size={'lg'}
                   variant={"outline"}
                   className="py-2 px-6 text-red-500 font-medium border border-red-700 rounded-[8px] text-md uppercase">
-                  Register to SLSYWC'24
+                  Register to SLSYWC&apos;24
                 </Button>
               </div>
             </div>
