@@ -23,11 +23,6 @@ export async function POST(req: Request) {
 
     const formData = await req.json()
 
-    const data = await sheets.spreadsheets.values.get({
-      spreadsheetId: "1tBM7UMLE9PQN5tyV3haikz9EBqqWZvxgtN1LCA0coWY",
-      range: "A1:B2"
-    })
-
     const newRow = Object.values(formData).map((value) =>
       Array.isArray(value) ? value.join(", ") : value
     )
@@ -36,7 +31,7 @@ export async function POST(req: Request) {
       spreadsheetId: "1tBM7UMLE9PQN5tyV3haikz9EBqqWZvxgtN1LCA0coWY",
       valueInputOption: "USER_ENTERED",
       requestBody: {
-        values: [[new Date().toLocaleString(), ...newRow]]
+        values: [[new Date().toLocaleString( 'en-US' , { timeZone : "Asia/Colombo"}), ...newRow]]
       },
       range: "Sheet1"
     })
@@ -90,7 +85,7 @@ export async function POST(req: Request) {
       const newRow = Object.values(RegistrationDetails).map((value) =>
         Array.isArray(value) ? value.join(", ") : value
       )
-      const appendRow = [new Date().toLocaleString(), ...newRow]
+      const appendRow = [new Date().toLocaleString( 'en-US' , { timeZone : "Asia/Colombo"}), ...newRow]
       console.log(appendRow)
 
       const update = await sheets.spreadsheets.values.append({
@@ -101,6 +96,7 @@ export async function POST(req: Request) {
         },
         range: "Exco"
       })
+      console.log(update)
     } else {
       const RegistrationDetails = {
         email,
@@ -127,7 +123,7 @@ export async function POST(req: Request) {
       const newRow = Object.values(RegistrationDetails).map((value) =>
         Array.isArray(value) ? value.join(", ") : value
       )
-      const appendRow = [new Date().toLocaleString(), ...newRow]
+      const appendRow = [new Date().toLocaleString( 'en-US' , { timeZone : "Asia/Colombo"}), ...newRow]
       console.log(appendRow)
       const update = await sheets.spreadsheets.values.append({
         spreadsheetId: "1vHO1uqEgp_mWWLvotO8pNYxH2YMcqvlmviYNU7VdAC0",
@@ -137,11 +133,8 @@ export async function POST(req: Request) {
         },
         range: "NonExco"
       })
+      console.log(update)
     }
-
-    // Here you would typically process the data
-    // For example, save to a database, send an email, etc.
-    console.log("sheet data received:", data.data.values)
 
     // For this example, we'll just echo back the received data
     return NextResponse.json({
@@ -149,7 +142,7 @@ export async function POST(req: Request) {
       data: req.body
     })
   } catch (error) {
-    console.error("Error processing form submission:", error)
+    console.log("Error processing form submission:", error)
     NextResponse.json({ message: "Internal Server Error" }, { status: 500 })
   }
 }
