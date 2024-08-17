@@ -1,3 +1,5 @@
+import Footer from "@/components/Sections/Footer"
+import Navbar from "@/components/Sections/Navbar"
 import React from "react"
 
 export default function RegisterPageLayout({
@@ -5,5 +7,10 @@ export default function RegisterPageLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return <div className="min-h-screen bg-primary-background bg-[url('/assets/bg-form.jpg')] bg-cover">{children}</div>
+  return <div className="min-h-screen bg-[#000011] text-white">
+    <div className="h-[2px] w-full bg-main-gradient absolute top-0 z-50"></div>
+    <Navbar></Navbar>
+    {children}
+    <Footer></Footer>
+  </div>
 }

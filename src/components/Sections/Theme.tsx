@@ -19,7 +19,7 @@ function Theme() {
               IEEE SLSYWC Congress 2024!
             </p>
           </div> */}
-          <div className="md:w-1/2">
+          <div className="md:w-1/2 duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(255,0,0,0.3)]">
             <img src="/assets/theme.png" alt="" />
           </div>
           <div className="md:w-1/2 md:max-w-[40ch]">

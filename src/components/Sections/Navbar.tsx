@@ -97,13 +97,15 @@ function Navbar() {
         <div className="container mx-auto px-4 relative lg:text-sm">
           <div className="py-3 md:py-4 flex justify-between items-center">
             <div className="flex items-center flex-shrink-0">
-              <img
+              <a href="/#">
+                <img
                 className={clsx("mr-2 duration-500 h-12", {
                   "h-16 md:h-20": !hasScrolled
                 })}
                 src="/assets/Congress Logo 2024.svg"
                 alt="Logo"
               />
+              </a>
             </div>
             <ul className="hidden lg:flex ml-14 space-x-12 ">
               {navItems.map((item, index) => (

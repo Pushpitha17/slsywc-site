@@ -35,9 +35,12 @@ export default function Home() {
                 </div>
               </div>
               <div className="py-6 text-center md:text-start">
-                <button className="py-2 px-6 text-red-500 font-medium border border-red-700 rounded-[8px] text-md uppercase">
-                  Registrations Opening Soon
-                </button>
+                <Button
+                  size={'lg'}
+                  variant={"outline"}
+                  className="py-2 px-6 text-red-500 font-medium border border-red-700 rounded-[8px] text-md uppercase">
+                  Register to SLSYWC&apos;24
+                </Button>
               </div>
             </div>
           </div>
