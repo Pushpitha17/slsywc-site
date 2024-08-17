@@ -561,7 +561,7 @@ function RegisterForm() {
             checkItems={[{ label: "I Agree.", id: "1" }]}
           >
             <div>
-              I give my consent for IEEE SL SYW Congress 2023 to share my
+              I give my consent for IEEE SL SYW Congress 2024 to share my
               information with partners.
             </div>
           </CheckBoxesInput>
