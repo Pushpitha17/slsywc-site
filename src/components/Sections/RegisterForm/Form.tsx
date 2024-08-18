@@ -568,8 +568,8 @@ function RegisterForm() {
               Acceptance of IEEE policies is required to register for this
               event. By submitting your registration details, you acknowledge
               that you have read and are in agreement with the{" "}
-              <a className="underline">IEEE privacy policy</a> and the{" "}
-              <a className="underline">terms and conditions of the event.</a>
+              <a className="underline" href="https://www.ieee.org/security-privacy.html" target="_blank">IEEE privacy policy</a> and the{" "}
+              <a className="underline" href="https://drive.google.com/drive/folders/1GODeLPMFKG9E5JIhS5HPySmMg-D4FrnD?usp=sharing" target="_blank">terms and conditions of the event.</a>
             </div>
           </CheckBoxesInput>
           <CheckBoxesInput
