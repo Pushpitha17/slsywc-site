@@ -174,11 +174,11 @@ function RegisterForm() {
 
   console.log({ isSubmitting, isSubmitted, isSubmitSuccessful })
 
-  // useEffect(() => {
-  //   if (success) {
-  //     push(`/success`)
-  //   }
-  // }, [success])
+  useEffect(() => {
+    if (success) {
+      push(`/success`)
+    }
+  }, [success])
 
   useEffect(() => {
     if (doubleChecked) {
