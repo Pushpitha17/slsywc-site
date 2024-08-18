@@ -59,7 +59,7 @@ const formSchema = z.object({
   partOfExCo: z.string().min(1, "Yes or No is required"),
   membershipNo: z.string().optional(),
   membershipCategory: z.string().min(1, "Please select a Membership Category."),
-  chapterMemberships: z.string().array().nonempty("Please select the options."),
+  chapterMemberships: z.string().array().optional(),
   currentExcoEntities: z
     .string()
     .array()
@@ -140,6 +140,15 @@ function RegisterForm() {
       method: "POST",
       body: JSON.stringify(values)
     })
+
+    const email = await fetch("/api/email", {
+      method: "POST",
+      body: JSON.stringify({
+        registeredEmail: values.email,
+        name: `${values.firstName} ${values.lastName}`
+      })
+    })
+
     setSuccess(true)
     return true
   }
@@ -165,11 +174,11 @@ function RegisterForm() {
 
   console.log({ isSubmitting, isSubmitted, isSubmitSuccessful })
 
-  useEffect(() => {
-    if (success) {
-      push(`/success`)
-    }
-  }, [success])
+  // useEffect(() => {
+  //   if (success) {
+  //     push(`/success`)
+  //   }
+  // }, [success])
 
   useEffect(() => {
     if (doubleChecked) {
@@ -311,8 +320,8 @@ function RegisterForm() {
             name="chapterMemberships"
           >
             <div>
-              Please tick the checkbox if you hold any of the following
-              chapter memberships:
+              Please tick the checkbox if you hold any of the following chapter
+              memberships:
             </div>
           </CheckBoxesInput>
           <CustomRadioInput
@@ -349,8 +358,8 @@ function RegisterForm() {
                 Executive Committee Details
               </div>
               <div className="font-bold text">
-                A delegate fee of LKR 12,000.00 will be charged from all delegates
-                participating in the IEEE SL SYW Congress 2024.
+                A delegate fee of LKR 15,000.00 will be charged from all
+                delegates participating in the IEEE SL SYW Congress 2024.
               </div>
               {/* <CustomTextInput form={form} name="membershipNo" textArea={false}>
               <div>Please provide your IEEE Membership Number.</div>
@@ -462,24 +471,7 @@ function RegisterForm() {
               </p>
 
               <ul className="font-semibold list-disc pl-6 space-y-1">
-                <li>Delegate Fee will be valued at LKR ****.</li>
-                <li>
-                  If the Delegate has an ****** the delegate will be eligible
-                  for a LKR 500/= discount. [Note: An IEEE SPS Student
-                  Membership (Essential Package) costs USD 0.50 ~ LKR 170.00]
-                </li>
-                <li>
-                  Please{" "}
-                  <a
-                    href="https://docs.google.com/document/d/1hxEehs2D3NhkTWAkt4zdSvNDf1_xAVEq5_c1MbOciSQ/edit?usp=sharing"
-                    target="_blank"
-                    className="underline"
-                  >
-                    Click Here
-                  </a>
-                  , to get a step-by-step tutorial on obtaining the IEEE SPS
-                  Membership.
-                </li>
+                <li>Delegate Fee will be valued at LKR 12,000.00 .</li>
               </ul>
               <CustomTextInput
                 form={form}

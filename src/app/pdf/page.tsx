@@ -1,33 +1,91 @@
-import React from "react"
-import { Badge } from "@/components/ui/badge"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
+"use client"
+import React, { useRef } from "react"
+import FilledForm from "@/components/Elements/FilledForm"
+import html2canvas from "html2canvas"
+import jsPDF from "jspdf"
+import html2PDF from "jspdf-html2canvas"
 
-function page() {
+function PDFPage() {
+  const handleThings = async () => {
+    generatePdf()
+  }
+
+  const pdfRef = useRef<HTMLDivElement>(null)
+
+  const generatePdf = async () => {
+    const element = pdfRef.current
+
+    if (!element) return
+
+    const elementWidth = 900
+    const elementHeight = 1500
+
+    const a4Width = 595.28
+    const a4Height = 841.89
+
+    html2canvas(element, {
+      useCORS: true,
+      allowTaint: true,
+      scrollX: 0,
+      scrollY: 0,
+
+      width: elementWidth, // Set the canvas width
+      height: elementHeight, // Set the canvas height
+      onclone: (clonedDoc: Document) => {
+        const clonedElement = clonedDoc.getElementById("pdf-content")
+        console.log(clonedElement)
+        if (clonedElement) {
+          clonedElement.style.display = "block"
+        }
+      }
+    }).then((canvas) => {
+      console.log(canvas)
+      const imgData = canvas.toDataURL("image/jpeg")
+
+      // Calculate scaling factor
+      const scaleX = a4Width / canvas.width
+      const scaleY = a4Height / canvas.height
+      const scale = Math.min(scaleX, scaleY)
+
+      // Calculate new width and height based on the scaling factor
+      const scaledWidth = canvas.width * scale
+      const scaledHeight = canvas.height * scale
+
+      const pdf = new jsPDF({
+        orientation: "portrait",
+        unit: "px",
+        format: "a4",
+        compress: true
+      })
+
+
+      pdf.addImage(
+        imgData, // image data
+        "jpeg", // format
+        0,
+        0,
+        a4Width,
+        scaledHeight,
+        undefined, // alias (optional)
+        "FAST", // compression (optional)
+        0 // rotation (optional)
+      )
+      pdf.save("download.pdf")
+    })
+  }
+
   return (
-    <div className="max-w-[720px] mx-auto text-black">
-      <div className="py-10">
-        <div className="font-bold leading-6 mb-5">
-          IEEE Sri Lanka Section Students | YP | WIE Congress 2024 Registration
-          Form
-          <div>
-            <Badge className="bg-green-500">success</Badge>
-          </div>
-        </div>
-        <div>
-          <TextField label="Full Name" value="Pushpitha"/>
-        </div>
+    <>
+      <div
+        className="max-w-[720px] mx-auto text-black"
+        ref={pdfRef}
+        id="pdf-content"
+      >
+        <FilledForm></FilledForm>
       </div>
-    </div>
+      <button onClick={handleThings}>Click</button>
+    </>
   )
 }
 
-export default page
-
-const TextField = ({ label, value } : { label : string, value : string}) => (
-  <div className="flex justify-start items-center">
-    <Label className="w-56">{label}</Label>
-    <p className="px-2">:</p>
-    <Input className="w-[420px] border-black" value={value} />
-  </div>
-)
+export default PDFPage

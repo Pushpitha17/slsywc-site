@@ -23,6 +23,10 @@ export async function POST(req: Request) {
 
     const formData = await req.json()
 
+    if (formData.chapterMemberships) {
+      formData.chapterMemberships = "None"
+    }
+
     const newRow = Object.values(formData).map((value) =>
       Array.isArray(value) ? value.join(", ") : value
     )
@@ -36,7 +40,7 @@ export async function POST(req: Request) {
       range: "Sheet1"
     })
 
-    const {
+    let {
       email,
       fullName,
       firstName,
@@ -62,6 +66,11 @@ export async function POST(req: Request) {
       tShirtSize,
       chapterMemberships
     } = formData
+
+    if (chapterMemberships) {
+      chapterMemberships = "None"
+    }
+
     if (partOfExCo === "Yes") {
       const RegistrationDetails = {
         email,

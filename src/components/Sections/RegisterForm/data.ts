@@ -107,13 +107,13 @@ const chapter_memberships = [
     id: "MTT-S",
     label: " MTT-S"
   },
-  {
-    id: "None",
-    label: "None"
-  }
 ]
 
 const participation_years = [
+  {
+    id: "2023",
+    label: "2023"
+  },
   {
     id: "2022",
     label: "2022"
