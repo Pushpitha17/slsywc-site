@@ -82,11 +82,11 @@ const exco_entities = [
     label: "IEEE Sri Lanka Section"
   },
   {
-    id: "YP",
+    id: "IEEE Young Professionals Sri Lanka (YP)",
     label: "IEEE Young Professionals Sri Lanka (YP)"
   },
   {
-    id: "WIE",
+    id: "IEEE Women in Engineering Sri Lanka (WIE)",
     label: "IEEE Women in Engineering Sri Lanka (WIE)"
   },
   {
@@ -105,7 +105,11 @@ const chapter_memberships = [
   },
   {
     id: "MTT-S",
-    label: " MTT-S"
+    label: "MTT-S"
+  },
+  {
+    id: "IAS",
+    label: "IAS"
   },
 ]
 

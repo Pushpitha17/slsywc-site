@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="form"></div>
+  </body>
+  <script>
+    let form = document.getElementById("form")
+
+    const renderHtml = (values) => {
+      let html = ""
+
+      let {
+        email,
+        fullName,
+        firstName,
+        lastName,
+        contact,
+        nic,
+        gender,
+        branch,
+        otherAffiliations,
+        partOfExCo,
+        hasMembership,
+        membershipNo,
+        membershipCategory,
+        currentExcoEntities,
+        positions,
+        joiningDays,
+        joiningOneDay,
+        volunteeringEntities,
+        volunteeringExperience,
+        whatEncouraged,
+        previousParticipations,
+        learn,
+        tShirtSize,
+        chapterMemberships
+      } = values
+
+      html += ` 
+  <div style="max-width: 600px; margin: 50px;">
+  <div style="margin-bottom: 20px;  font-weight: bold;">
+      <p">Registration for IEEE Sri Lanka Section Students | YP | WIE Congress 2024</p>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Email</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${email}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Name with Initials</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${fullName}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">First Name</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${firstName}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Last Name</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${lastName}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Contact</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${contact}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">NIC Number</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${nic}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Gender</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${gender}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">IEEE Student Branch Affilliation</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${branch}</div>
+  </div>
+  ${
+    otherAffiliations != "N/A"
+      ? `<div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Other Affilliation</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${otherAffiliations}</div>
+  </div>`
+      : ""
+  }
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Active IEEE Membersip</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${hasMembership}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">IEEE Membersip Number</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${membershipNo}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Memebership Category</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${membershipCategory}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Chapter Memberships</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;"> ${chapterMemberships
+        .map((item) => `<div>${item}</div>`)
+        .join("")}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Part of Executive Committe</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${partOfExCo}</div>
+  </div>
+
+ ${
+   partOfExCo === "Yes"
+     ? `
+ <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Executive Committee Member Entities</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;"> ${currentExcoEntities
+        .map((item) => `<div>${item}</div>`)
+        .join("")}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Positions</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${positions}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Joining Days</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${joiningDays}</div>
+  </div>
+  ${
+    joiningOneDay != "N/A"
+      ? `<div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Joining Day</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${joiningOneDay}</div>
+  </div>`
+      : ""
+  }
+ `
+     : `
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Entities Currently Volunteering in</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;"> ${volunteeringEntities
+        .map((item) => `<div>${item}</div>`)
+        .join("")}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">IEEE accomplishments or Volunteering experiences</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${volunteeringExperience}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Reasons for Interest</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${whatEncouraged}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Previous Participation</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;"> ${previousParticipations
+        .map((item) => `<div>${item}</div>`)
+        .join("")}</div>
+  </div>
+  <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Learn to become a member of IEEE Technical Societies</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${learn}</div>
+  </div>
+  `
+ }
+ <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">T-Shirt Size</div> 
+      <div style= "padding-right: 20px">:</div>
+      <div style="margin-left: 10px;">${tShirtSize}</div>
+  </div>
+</div>
+`
+      return html
+    }
+
+    form.innerHTML = renderHtml({
+      email: "pushpithagee@gmail.com",
+      fullName: "Pushpitha Geeganage",
+      firstName: "Pushpitha",
+      lastName: "Geeganage",
+      contact: "+94702399329",
+      nic: "992831456V",
+      gender: "Female",
+      branch: "8. Uva Wellassa University (UWU)",
+      otherAffiliations: "N/A",
+      partOfExCo: "Yes",
+      membershipNo: "121231",
+      membershipCategory: "Senior Member",
+      chapterMemberships: ["IES", "MIT"],
+      currentExcoEntities: ["YP", "IEEE Sri Lanka Section"],
+      positions: "western province",
+      joiningDays: "2 days (Stay on the night of September 14th only)",
+      joiningOneDay: "N/A",
+      hasMembership: "Yes",
+      volunteeringEntities: ["N/A"],
+      volunteeringExperience: "N/A",
+      whatEncouraged: "N/A",
+      previousParticipations: ["N/A"],
+      learn: "N/A",
+      tShirtSize: "XS",
+      privacy: ["1"],
+      consent: ["1"]
+    })
+  </script>
+</html>

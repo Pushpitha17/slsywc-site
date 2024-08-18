@@ -107,7 +107,6 @@ export async function POST(req: Request) {
         },
         range: "Exco"
       })
-      console.log(update)
     } else {
       const RegistrationDetails = {
         email,
@@ -144,13 +143,12 @@ export async function POST(req: Request) {
         },
         range: "NonExco"
       })
-      console.log(update)
     }
 
     // For this example, we'll just echo back the received data
     return NextResponse.json({
       message: "Form submitted successfully",
-      data: req.body
+      data: req.formData
     })
   } catch (error) {
     console.log("Error processing form submission:", error)

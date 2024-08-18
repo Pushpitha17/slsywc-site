@@ -129,6 +129,8 @@ function RegisterForm() {
   const [dialogOpen, setDialogOpen] = useState(false)
   const [success, setSuccess] = useState(false)
 
+  console.log(form.formState)
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
     if (!doubleChecked) {
       setDialogOpen(true)
@@ -145,7 +147,8 @@ function RegisterForm() {
       method: "POST",
       body: JSON.stringify({
         registeredEmail: values.email,
-        name: `${values.firstName} ${values.lastName}`
+        name: `${values.firstName} ${values.lastName}`,
+        values
       })
     })
 
@@ -170,7 +173,7 @@ function RegisterForm() {
   }, [branch])
 
   const { isSubmitting, isSubmitted, isSubmitSuccessful } = form.formState
-  console.log(form.formState)
+  console.log(form.formState.errors)
 
   console.log({ isSubmitting, isSubmitted, isSubmitSuccessful })
 
@@ -518,7 +521,7 @@ function RegisterForm() {
               <div>
                 <div className="flex flex-col items-center my-6">
                   <p className="w-full mb-4 underline">T-shirt Design</p>
-                    <img
+                  <img
                     src={`/assets/form/tshirt_design.jpg`}
                     alt=""
                     className="w-full md:h-96 md:w-auto rounded-2xl"
@@ -542,7 +545,18 @@ function RegisterForm() {
               ></SelectInput>
             </>
           )}
-
+          <div>
+          <a
+            href="https://drive.google.com/drive/folders/1D8_KqICYTGU6fx5Kf2GleKccP4cb_Dle?usp=sharing"
+            target="_blank"
+          >
+            <div className="border rounded w-fit py-2 px-4 text-sm" >
+              {" "}
+              Download the Delegate booklet
+            </div>
+          </a>
+          </div>
+         
           <div className="font-bold text-lg">Terms & Conditions</div>
 
           <CheckBoxesInput
@@ -568,6 +582,12 @@ function RegisterForm() {
               information with partners.
             </div>
           </CheckBoxesInput>
+
+          {JSON.stringify(form.formState.errors) !== "{}" && (
+            <FormMessage className="pt-2 text-red-600">
+              Please check and Resolve all the errors shown in required fields.
+            </FormMessage>
+          )}
 
           <div className="py-4">
             <button

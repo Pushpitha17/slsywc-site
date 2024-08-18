@@ -81,7 +81,7 @@ export default function Home() {
         </div>
       </section>
       {/* <div className="min-h-screen bg-[url('/assets/bg-sections.jpg')] bg-cover"> */}
-      <Countdown targetDate="Sep 14, 2024, 1:00:00 PM" />
+      <Countdown targetDate="Sep 14, 2024, 8:00:00 AM" />
       <div className="min-h-screen bg-cover">
         <Welcome />
         <Theme />
