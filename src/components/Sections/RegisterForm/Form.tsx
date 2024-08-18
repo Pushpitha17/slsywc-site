@@ -58,7 +58,7 @@ const formSchema = z.object({
   otherAffiliations: z.string().min(1, "Please state your affiliation."),
   partOfExCo: z.string().min(1, "Yes or No is required"),
   membershipNo: z.string().optional(),
-  membershipCategory: z.string().min(1, "Please select a Membership Category."),
+  membershipCategory: z.string().optional(),
   chapterMemberships: z.string().array().optional(),
   currentExcoEntities: z
     .string()
