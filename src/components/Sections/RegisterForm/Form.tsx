@@ -31,7 +31,8 @@ import {
   participating_days,
   volunteering_entities,
   participation_years,
-  thsirt_size
+  thsirt_size,
+  chapter_memberships
 } from "./data"
 import {
   AlertDialog,
@@ -58,6 +59,7 @@ const formSchema = z.object({
   partOfExCo: z.string().min(1, "Yes or No is required"),
   membershipNo: z.string().optional(),
   membershipCategory: z.string().min(1, "Please select a Membership Category."),
+  chapterMemberships: z.string().array().nonempty("Please select the options."),
   currentExcoEntities: z
     .string()
     .array()
@@ -100,6 +102,7 @@ function RegisterForm() {
       partOfExCo: "",
       membershipNo: "",
       membershipCategory: "",
+      chapterMemberships: [],
       //excetive committe details
       currentExcoEntities: [],
       positions: "",
@@ -129,7 +132,7 @@ function RegisterForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     if (!doubleChecked) {
       setDialogOpen(true)
-      return 
+      return
     }
 
     console.log(values)
@@ -164,16 +167,14 @@ function RegisterForm() {
 
   useEffect(() => {
     if (success) {
-      push(`/register/confirm`)
+      push(`/success`)
     }
   }, [success])
 
   useEffect(() => {
-
     if (doubleChecked) {
       form.handleSubmit(onSubmit)()
     }
-
   }, [doubleChecked])
 
   useEffect(() => {
@@ -304,6 +305,16 @@ function RegisterForm() {
             label="Membership Category"
             placeholder="Select a Membership Category"
           ></SelectInput>
+          <CheckBoxesInput
+            form={form}
+            checkItems={chapter_memberships}
+            name="chapterMemberships"
+          >
+            <div>
+              Please tick the checkbox if you hold any of the following
+              chapter memberships:
+            </div>
+          </CheckBoxesInput>
           <CustomRadioInput
             form={form}
             name="partOfExCo"
@@ -338,7 +349,7 @@ function RegisterForm() {
                 Executive Committee Details
               </div>
               <div className="font-bold text">
-                A delegate fee of LKR ***** will be charged from all delegates
+                A delegate fee of LKR 12,000.00 will be charged from all delegates
                 participating in the IEEE SL SYW Congress 2024.
               </div>
               {/* <CustomTextInput form={form} name="membershipNo" textArea={false}>
@@ -552,7 +563,7 @@ function RegisterForm() {
               event. By submitting your registration details, you acknowledge
               that you have read and are in agreement with the{" "}
               <a className="underline">IEEE privacy policy</a> and the{" "}
-              <a className="underline">Terms and conditions of the event.</a>
+              <a className="underline">terms and conditions of the event.</a>
             </div>
           </CheckBoxesInput>
           <CheckBoxesInput

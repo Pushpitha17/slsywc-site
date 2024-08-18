@@ -98,6 +98,20 @@ const exco_entities = [
     label: "IEEE Sri Lanka Section Technical Society Chapter"
   }
 ]
+const chapter_memberships = [
+  {
+    id: "IES",
+    label: "IES"
+  },
+  {
+    id: "MTT-S",
+    label: " MTT-S"
+  },
+  {
+    id: "None",
+    label: "None"
+  }
+]
 
 const participation_years = [
   {
@@ -162,5 +176,6 @@ export {
   thsirt_size,
   membership_types,
   participating_days,
-  exco_entities
+  exco_entities,
+  chapter_memberships
 }

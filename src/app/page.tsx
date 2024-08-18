@@ -23,7 +23,7 @@ export default function Home() {
             className="absolute right-0 bottom-0 mx-auto h-[50%] max-w-full lg:hidden vh-less-600:h-[40%]"
             src="/assets/hero_graphic.png"
           ></img>
-          <div className="container mx-auto md:h-[calc(98%-150px)] " >
+          <div className="container mx-auto md:h-[calc(98%-150px)] ">
             <div className="md:pt-32 pt-16 md:pl-24">
               <div className="mb-6 md:mb-3 font-semibold text-center md:text-start">
                 IEEE Sri Lanka Section Students | YP | WIE Congress{" "}
@@ -35,12 +35,16 @@ export default function Home() {
                 </div>
               </div>
               <div className="py-6 text-center md:text-start">
-                <Button
-                  size={'lg'}
-                  variant={"outline"}
-                  className="py-2 px-6 text-red-500 font-medium border border-red-700 rounded-[8px] text-md uppercase">
-                  Register to SLSYWC&apos;24
-                </Button>
+                <Link href={"/register"}>
+                  {" "}
+                  <Button
+                    size={"lg"}
+                    variant={"outline"}
+                    className="py-2 px-6 text-red-500 font-medium border border-red-700 rounded-[8px] text-md uppercase"
+                  >
+                    Register to SLSYWC&apos;24
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -77,14 +81,14 @@ export default function Home() {
         </div>
       </section>
       {/* <div className="min-h-screen bg-[url('/assets/bg-sections.jpg')] bg-cover"> */}
-      <Countdown targetDate="Sep 14, 2024, 1:00:00 PM"/>
+      <Countdown targetDate="Sep 14, 2024, 1:00:00 PM" />
       <div className="min-h-screen bg-cover">
         <Welcome />
         <Theme />
         <Sponsors />
         <PastEvents />
         <Organized />
-        <Team/>
+        <Team />
         <FAQ />
         <Footer></Footer>
         {/* <Countdown/> */}

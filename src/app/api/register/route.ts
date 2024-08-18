@@ -59,7 +59,8 @@ export async function POST(req: Request) {
       whatEncouraged,
       previousParticipations,
       learn,
-      tShirtSize
+      tShirtSize,
+      chapterMemberships
     } = formData
     if (partOfExCo === "Yes") {
       const RegistrationDetails = {
@@ -75,6 +76,7 @@ export async function POST(req: Request) {
         hasMembership,
         membershipNo,
         membershipCategory,
+        chapterMemberships,
         currentExcoEntities,
         positions,
         joiningDays,
@@ -111,7 +113,7 @@ export async function POST(req: Request) {
         hasMembership,
         membershipNo,
         membershipCategory,
-        currentExcoEntities,
+        chapterMemberships,
         volunteeringEntities,
         volunteeringExperience,
         whatEncouraged,

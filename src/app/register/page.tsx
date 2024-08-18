@@ -3,7 +3,7 @@ import React from "react"
 
 function Register() {
   return (
-    <div className="max-w-[720px] mx-auto text-primary-foreground mt-28">
+    <div className="max-w-[720px] mx-auto text-primary-foreground">
       <div className="container">
         <div className="mb-10">
           <div className="items-center justify-center flex">
