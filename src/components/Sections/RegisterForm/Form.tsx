@@ -526,10 +526,10 @@ function RegisterForm() {
               <div>
                 <div className="flex flex-col items-center my-6">
                   <p className="w-full mb-4 underline">T-shirt Design</p>
-                  <img
+                    <img
                     src={`/assets/form/tshirt_design.jpg`}
                     alt=""
-                    className="w-full md:h-96 md:w-auto rounded"
+                    className="w-full md:h-96 md:w-auto rounded-2xl"
                   />
                 </div>
                 <div className="flex flex-col items-center my-6">
