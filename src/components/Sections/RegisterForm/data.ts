@@ -111,6 +111,10 @@ const chapter_memberships = [
     id: "IAS",
     label: "IAS"
   },
+  {
+    id: "CS",
+    label: "CS"
+  },
 ]
 
 const participation_years = [
