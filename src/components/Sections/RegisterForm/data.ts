@@ -7,7 +7,7 @@ const branches = [
   "6. General Sri John Kotelawala Defence University (KDU)",
   "7. Wayamba University of Sri Lanka (WUSL)",
   "8. Informatics Institute of Technology (IIT)",
-  "8. Uva Wellassa University (UWU)",
+  "9. Uva Wellassa University (UWU)",
   "10. Sabaragamuwa University of Sri Lanka (SUSL)",
   "11. Open University of Sri Lanka (OUSL)",
   "12. University of Kelaniya (UOK)",
