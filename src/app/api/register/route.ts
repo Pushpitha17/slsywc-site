@@ -35,7 +35,12 @@ export async function POST(req: Request) {
       spreadsheetId: "1tBM7UMLE9PQN5tyV3haikz9EBqqWZvxgtN1LCA0coWY",
       valueInputOption: "USER_ENTERED",
       requestBody: {
-        values: [[new Date().toLocaleString( 'en-US' , { timeZone : "Asia/Colombo"}), ...newRow]]
+        values: [
+          [
+            new Date().toLocaleString("en-US", { timeZone: "Asia/Colombo" }),
+            ...newRow
+          ]
+        ]
       },
       range: "Sheet1"
     })
@@ -51,6 +56,7 @@ export async function POST(req: Request) {
       branch,
       otherAffiliations,
       partOfExCo,
+      foreign,
       hasMembership,
       membershipNo,
       membershipCategory,
@@ -69,6 +75,43 @@ export async function POST(req: Request) {
 
     if (chapterMemberships) {
       chapterMemberships = "None"
+    }
+
+    if (foreign === "Yes") {
+      const RegistrationDetails = {
+        email,
+        fullName,
+        firstName,
+        lastName,
+        contact,
+        nic,
+        gender,
+        branch,
+        otherAffiliations,
+        hasMembership,
+        membershipNo,
+        membershipCategory,
+        chapterMemberships,
+        tShirtSize
+      }
+
+      const newRow = Object.values(RegistrationDetails).map((value) =>
+        Array.isArray(value) ? value.join(", ") : value
+      )
+      const appendRow = [
+        new Date().toLocaleString("en-US", { timeZone: "Asia/Colombo" }),
+        ...newRow
+      ]
+      console.log(appendRow)
+
+      const update = await sheets.spreadsheets.values.append({
+        spreadsheetId: "1vHO1uqEgp_mWWLvotO8pNYxH2YMcqvlmviYNU7VdAC0",
+        valueInputOption: "USER_ENTERED",
+        requestBody: {
+          values: [appendRow]
+        },
+        range: "Foreign"
+      })
     }
 
     if (partOfExCo === "Yes") {
@@ -96,7 +139,10 @@ export async function POST(req: Request) {
       const newRow = Object.values(RegistrationDetails).map((value) =>
         Array.isArray(value) ? value.join(", ") : value
       )
-      const appendRow = [new Date().toLocaleString( 'en-US' , { timeZone : "Asia/Colombo"}), ...newRow]
+      const appendRow = [
+        new Date().toLocaleString("en-US", { timeZone: "Asia/Colombo" }),
+        ...newRow
+      ]
       console.log(appendRow)
 
       const update = await sheets.spreadsheets.values.append({
@@ -107,7 +153,9 @@ export async function POST(req: Request) {
         },
         range: "Exco"
       })
-    } else {
+    }
+
+    if (partOfExCo === "No") {
       const RegistrationDetails = {
         email,
         fullName,
@@ -133,7 +181,10 @@ export async function POST(req: Request) {
       const newRow = Object.values(RegistrationDetails).map((value) =>
         Array.isArray(value) ? value.join(", ") : value
       )
-      const appendRow = [new Date().toLocaleString( 'en-US' , { timeZone : "Asia/Colombo"}), ...newRow]
+      const appendRow = [
+        new Date().toLocaleString("en-US", { timeZone: "Asia/Colombo" }),
+        ...newRow
+      ]
       console.log(appendRow)
       const update = await sheets.spreadsheets.values.append({
         spreadsheetId: "1vHO1uqEgp_mWWLvotO8pNYxH2YMcqvlmviYNU7VdAC0",

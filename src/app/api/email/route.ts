@@ -68,6 +68,7 @@ const renderHtml = (values: any) => {
     branch,
     otherAffiliations,
     partOfExCo,
+    foreign,
     hasMembership,
     membershipNo,
     membershipCategory,
@@ -84,8 +85,105 @@ const renderHtml = (values: any) => {
     chapterMemberships
   } = values
 
+  if (foreign === "Yes") {
+    html += `
+  <div style="max-width: 660px;">
+    <div style="margin-bottom: 20px;  font-weight: bold;">
+      <p">Registration for IEEE Sri Lanka Section Students | YP | WIE Congress 2024</p>
+    </div>
+    <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Email</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;">${email}</div>
+    </div>
+    <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Name with Initials</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;">${fullName}</div>
+    </div>
+    <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">First Name</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;">${firstName}</div>
+    </div>
+    <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Last Name</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;">${lastName}</div>
+    </div>
+    <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Contact</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;">${contact}</div>
+    </div>
+    <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">NIC Number</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;">${nic}</div>
+    </div>
+    <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Gender</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;">${gender}</div>
+    </div>
+    <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">IEEE Student Branch Affilliation</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;">${branch}</div>
+    </div>
+    ${
+      otherAffiliations != "N/A"
+        ? `<div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Other Affilliation</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;">${otherAffiliations}</div>
+    </div>`
+        : ""
+    }
+    <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Active IEEE Membersip</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;">${hasMembership}</div>
+    </div>
+    <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">IEEE Membersip Number</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;">${membershipNo}</div>
+    </div>
+    <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Memebership Category</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;">${membershipCategory}</div>
+    </div>
+    <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Chapter Memberships</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;"> ${chapterMemberships
+        .map((item: string) => `<div>${item}</div>`)
+        .join("")}</div>
+    </div>
+    <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">Reasons for Interest</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;">${whatEncouraged}</div>
+    </div>
+    <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">IEEE accomplishments or Volunteering experiences</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;">${volunteeringExperience}</div>
+    </div>
+    <div style="margin-bottom: 20px; display : flex; align-items: start;">
+      <div style="width:200px">T-Shirt Size</div> 
+      <div style= "padding-right: 20px; font-weight:bold;">:</div>
+      <div style="margin-left: 10px;">${tShirtSize}</div>
+    </div>
+  </div>
+
+    `
+  }
+
   html += ` 
-<div style="max-width: 600px;">
+<div style="max-width: 660px;">
 <div style="margin-bottom: 20px;  font-weight: bold;">
   <p">Registration for IEEE Sri Lanka Section Students | YP | WIE Congress 2024</p>
 </div>

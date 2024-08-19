@@ -56,6 +56,7 @@ const formSchema = z.object({
   gender: z.string().min(1, "Gender is required"),
   branch: z.string().min(1, "Branch is required"),
   otherAffiliations: z.string().min(1, "Please state your affiliation."),
+  foreign: z.string().min(1, "Yes or No is required"),
   partOfExCo: z.string().min(1, "Yes or No is required"),
   membershipNo: z.string().optional(),
   membershipCategory: z.string().optional(),
@@ -99,6 +100,7 @@ function RegisterForm() {
       branch: "",
       otherAffiliations: "",
       //for all
+      foreign: "",
       partOfExCo: "",
       membershipNo: "",
       membershipCategory: "",
@@ -160,6 +162,7 @@ function RegisterForm() {
     console.log("errors", form.formState.errors)
   }
 
+  const foreign = useWatch({ control: form.control, name: "foreign" })
   const exco = useWatch({ control: form.control, name: "partOfExCo" })
   const branch = useWatch({ control: form.control, name: "branch" })
   const joiningDays = useWatch({ control: form.control, name: "joiningDays" })
@@ -175,7 +178,7 @@ function RegisterForm() {
   const { isSubmitting, isSubmitted, isSubmitSuccessful } = form.formState
   console.log(form.formState.errors)
 
-  console.log({ isSubmitting, isSubmitted, isSubmitSuccessful })
+  console.log(form.getValues())
 
   useEffect(() => {
     if (success) {
@@ -192,36 +195,70 @@ function RegisterForm() {
   useEffect(() => {
     const { setValue, reset, getValues } = form
 
-    if (exco === "Yes") {
-      reset({
-        ...getValues(),
-        positions: "",
-        currentExcoEntities: [],
-        joiningDays: "",
-        joiningOneDay: "",
-        volunteeringEntities: ["N/A"],
-        volunteeringExperience: "N/A",
-        whatEncouraged: "N/A",
-        previousParticipations: ["N/A"],
-        learn: "N/A"
-      })
-    }
-
-    if (exco === "No") {
+    if (foreign === "Yes") {
       reset({
         ...getValues(),
         positions: "N/A",
         currentExcoEntities: ["N/A"],
         joiningDays: "N/A",
         joiningOneDay: "N/A",
-        volunteeringEntities: [],
+        volunteeringEntities: ["N/A"],
         volunteeringExperience: "",
         whatEncouraged: "",
-        previousParticipations: [],
-        learn: ""
+        previousParticipations: ["N/A"],
+        learn: "N/A",
+        partOfExCo: "N/A"
       })
     }
-  }, [exco])
+
+    if (foreign === "No") {
+      if (exco === "") {
+        reset({
+          ...getValues(),
+          positions: "",
+          currentExcoEntities: [],
+          joiningDays: "",
+          joiningOneDay: "",
+          volunteeringEntities: [],
+          volunteeringExperience: "",
+          whatEncouraged: "",
+          previousParticipations: [],
+          learn: "",
+          partOfExCo: ""
+        })
+      }
+
+      if (exco === "Yes") {
+        reset({
+          ...getValues(),
+          positions: "",
+          currentExcoEntities: [],
+          joiningDays: "",
+          joiningOneDay: "",
+          volunteeringEntities: ["N/A"],
+          volunteeringExperience: "N/A",
+          whatEncouraged: "N/A",
+          previousParticipations: ["N/A"],
+          learn: "N/A"
+        })
+      }
+
+      if (exco === "No") {
+        reset({
+          ...getValues(),
+          positions: "N/A",
+          currentExcoEntities: ["N/A"],
+          joiningDays: "N/A",
+          joiningOneDay: "N/A",
+          volunteeringEntities: [],
+          volunteeringExperience: "",
+          whatEncouraged: "",
+          previousParticipations: [],
+          learn: ""
+        })
+      }
+    }
+  }, [exco, foreign])
 
   useEffect(() => {
     if (joiningDays !== "One day only") {
@@ -329,153 +366,210 @@ function RegisterForm() {
           </CheckBoxesInput>
           <CustomRadioInput
             form={form}
-            name="partOfExCo"
+            name="foreign"
             selectItems={["Yes", "No"]}
           >
-            <div>
-              <p className="pb-4">
-                Are you part of an{" "}
-                <span className="font-semibold">Executive Committee</span>
-              </p>
-              <ol className="pl-4 pb-4">
-                <li>1. IEEE Sri Lanka Section</li>
-                <li>2. IEEE Young Professionals Sri Lanka </li>
-                <li>3. IEEE Women in Engineering Sri Lanka</li>
-                <li>4. IEEE Sri Lanka Section SIGHT</li>
-                <li>5. IEEE Technical Society Sri Lanka Chapter</li>
-              </ol>
-              <p>
-                If Yes, Please Select &quot;
-                <span className="font-bold">Yes</span>
-                &quot;.
-              </p>
-              <p>
-                Sub-Committee members of the above OUs, please select &quot;
-                <span className="font-bold">No</span>&quot;.
-              </p>
-            </div>
+            <div>Are you a foreign IEEE delegate?</div>
           </CustomRadioInput>
-          {exco === "Yes" && (
+          {foreign === "No" && (
             <>
-              <div className="font-bold text-lg">
-                Executive Committee Details
-              </div>
-              <div className="font-bold text">
-                A delegate fee of LKR 15,000.00 will be charged from all
-                delegates participating in the IEEE SL SYW Congress 2024.
-              </div>
-              {/* <CustomTextInput form={form} name="membershipNo" textArea={false}>
-              <div>Please provide your IEEE Membership Number.</div>
-            </CustomTextInput>
-            <SelectInput
-              form={form}
-              selectItems={membership_catgories}
-              name="membershipCategory"
-              label="Membership Category"
-              placeholder="Select a Membership Category"
-            ></SelectInput> */}
-              <CheckBoxesInput
+              <CustomRadioInput
                 form={form}
-                checkItems={exco_entities}
-                name="currentExcoEntities"
+                name="partOfExCo"
+                selectItems={["Yes", "No"]}
               >
                 <div>
-                  Select the entity/entities you are currently an Executive
-                  Committee Member in
+                  <p className="pb-4">
+                    Are you part of an{" "}
+                    <span className="font-semibold">Executive Committee</span>
+                  </p>
+                  <ol className="pl-4 pb-4">
+                    <li>1. IEEE Sri Lanka Section</li>
+                    <li>2. IEEE Young Professionals Sri Lanka </li>
+                    <li>3. IEEE Women in Engineering Sri Lanka</li>
+                    <li>4. IEEE Sri Lanka Section SIGHT</li>
+                    <li>5. IEEE Technical Society Sri Lanka Chapter</li>
+                  </ol>
+                  <p>
+                    If Yes, Please Select &quot;
+                    <span className="font-bold">Yes</span>
+                    &quot;.
+                  </p>
+                  <p>
+                    Sub-Committee members of the above OUs, please select &quot;
+                    <span className="font-bold">No</span>&quot;.
+                  </p>
                 </div>
-              </CheckBoxesInput>
-              <CustomTextInput form={form} name="positions" textArea={false}>
-                <div className="pb-2">
-                  Please state your position in the respective Ex-Com(s) you are
-                  a part of.{" "}
-                </div>
-                <p className="text-xs">
-                  If you are a member of an IEEE Sri Lanka Section Technical
-                  Society Chapter, please mention the Technical Society as well
-                </p>
-              </CustomTextInput>
-              <CustomSelectInput
-                form={form}
-                selectItems={[
-                  "All 3 days",
-                  "2 days (Stay on the night of September 14th only)",
-                  "2 days (Stay on the night of September 15th only)",
-                  "One day only"
-                ]}
-                name="joiningDays"
-                placeholder="Select joining dates"
-              >
-                <p>
-                  Please select the days you will be joining for IEEE
-                  SLSYWC&apos;24:
-                </p>
-              </CustomSelectInput>
-              {joiningDays == "One day only" && (
-                <CustomRadioInput
-                  form={form}
-                  name="joiningOneDay"
-                  selectItems={[
-                    "September 14th",
-                    "September 15th",
-                    "September 16th"
-                  ]}
-                >
-                  <div>
-                    If you are joining for one day only, please specify the day.
+              </CustomRadioInput>
+              {exco === "Yes" && (
+                <>
+                  <div className="font-bold text-lg">
+                    Executive Committee Details
                   </div>
-                </CustomRadioInput>
+                  <div className="font-bold text">
+                    A delegate fee of LKR 15,000.00 will be charged from all
+                    delegates participating in the IEEE SL SYW Congress 2024.
+                  </div>
+                  <CheckBoxesInput
+                    form={form}
+                    checkItems={exco_entities}
+                    name="currentExcoEntities"
+                  >
+                    <div>
+                      Select the entity/entities you are currently an Executive
+                      Committee Member in
+                    </div>
+                  </CheckBoxesInput>
+                  <CustomTextInput
+                    form={form}
+                    name="positions"
+                    textArea={false}
+                  >
+                    <div className="pb-2">
+                      Please state your position in the respective Ex-Com(s) you
+                      are a part of.{" "}
+                    </div>
+                    <p className="text-xs">
+                      If you are a member of an IEEE Sri Lanka Section Technical
+                      Society Chapter, please mention the Technical Society as
+                      well
+                    </p>
+                  </CustomTextInput>
+                  <CustomSelectInput
+                    form={form}
+                    selectItems={[
+                      "All 3 days",
+                      "2 days (Stay on the night of September 14th only)",
+                      "2 days (Stay on the night of September 15th only)",
+                      "One day only"
+                    ]}
+                    name="joiningDays"
+                    placeholder="Select joining dates"
+                  >
+                    <p>
+                      Please select the days you will be joining for IEEE
+                      SLSYWC&apos;24:
+                    </p>
+                  </CustomSelectInput>
+                  {joiningDays == "One day only" && (
+                    <CustomRadioInput
+                      form={form}
+                      name="joiningOneDay"
+                      selectItems={[
+                        "September 14th",
+                        "September 15th",
+                        "September 16th"
+                      ]}
+                    >
+                      <div>
+                        If you are joining for one day only, please specify the
+                        day.
+                      </div>
+                    </CustomRadioInput>
+                  )}
+                </>
+              )}
+              {exco === "No" && (
+                <>
+                  <CheckBoxesInput
+                    form={form}
+                    name="volunteeringEntities"
+                    checkItems={volunteering_entities}
+                  >
+                    <div>
+                      Select the entity/entities you are currently an
+                      volunteering in
+                    </div>
+                  </CheckBoxesInput>
+                  <CustomTextInput
+                    form={form}
+                    textArea={true}
+                    name="volunteeringExperience"
+                  >
+                    <div>
+                      Mention your IEEE accomplishments or volunteering
+                      experiences
+                    </div>
+                  </CustomTextInput>
+                  <div className="font-bold text-lg pb-4">
+                    IEEE SL SYW Congress 2024
+                  </div>
+
+                  <p className="pb-2">
+                    Only a selected number of participants will be entertained
+                    at the IEEE SL SYW Congress 2024. The following respective
+                    entities under the IEEE Sri Lanka Section will conduct the
+                    selection of delegates:
+                  </p>
+                  <ul className="list-disc pl-6">
+                    <li>IEEE Sri Lanka Section</li>
+                    <li>IEEE Sri Lanka Section Student Activities Committee</li>
+                    <li>IEEE Young Professionals Sri Lanka</li>
+                    <li>IEEE Women in Engineering Sri Lanka</li>
+                    <li>IEEE Sri Lanka Section SIGHT</li>
+                    <li>IEEE Sri Lanka Section Technical Society Chapters</li>
+                    <li>IEEE Student Branches</li>
+                  </ul>
+
+                  <p>
+                    Selected delegates are obligated to pay the delegate fee to
+                    participate in the IEEE SL SYW Congress 2024.
+                  </p>
+
+                  <ul className="font-semibold list-disc pl-6 space-y-1">
+                    <li>Delegate Fee will be valued at LKR 12,000.00 .</li>
+                  </ul>
+                  <CustomTextInput
+                    form={form}
+                    name="whatEncouraged"
+                    textArea={true}
+                  >
+                    <div>
+                      We would like to know what encouraged you to take part in
+                      IEEE SL SYW Congress 2024.
+                    </div>
+                  </CustomTextInput>
+                  <CheckBoxesInput
+                    form={form}
+                    name="previousParticipations"
+                    checkItems={participation_years}
+                  >
+                    <div>
+                      If you have participated in previous years, select the
+                      years you participated.
+                    </div>
+                  </CheckBoxesInput>
+                  <CustomRadioInput
+                    form={form}
+                    name="learn"
+                    selectItems={["Yes", "No"]}
+                  >
+                    <div>
+                      Would you like to learn how to become a member of IEEE
+                      Technical Societies?
+                    </div>
+                  </CustomRadioInput>
+                </>
               )}
             </>
           )}
-          {exco === "No" && (
+          {foreign === "Yes" && (
             <>
-              <CheckBoxesInput
-                form={form}
-                name="volunteeringEntities"
-                checkItems={volunteering_entities}
-              >
-                <div>
-                  Select the entity/entities you are currently an volunteering
-                  in
-                </div>
-              </CheckBoxesInput>
-              <CustomTextInput
-                form={form}
-                textArea={true}
-                name="volunteeringExperience"
-              >
-                <div>
-                  Mention your IEEE accomplishments or volunteering experiences
-                </div>
-              </CustomTextInput>
-              <div className="font-bold text-lg pb-4">
+              <div className="font-bold text-lg pb-2">
                 IEEE SL SYW Congress 2024
               </div>
+              <div>
+                <p className="pb-1">
+                  Thank you for your interest in the IEEE SL SYW Congress 2024.
+                </p>
+                <ul className="font-semibold list-disc pl-6 mt-1">
+                  <li>
+                    For foreign delegates, the delegate fee will be
+                    valued at $80.
+                  </li>
+                </ul>
+              </div>
 
-              <p className="pb-2">
-                Only a selected number of participants will be entertained at
-                the IEEE SL SYW Congress 2024. The following respective entities
-                under the IEEE Sri Lanka Section will conduct the selection of
-                delegates:
-              </p>
-              <ul className="list-disc pl-6">
-                <li>IEEE Sri Lanka Section</li>
-                <li>IEEE Sri Lanka Section Student Activities Committee</li>
-                <li>IEEE Young Professionals Sri Lanka</li>
-                <li>IEEE Women in Engineering Sri Lanka</li>
-                <li>IEEE Sri Lanka Section SIGHT</li>
-                <li>IEEE Sri Lanka Section Technical Society Chapters</li>
-                <li>IEEE Student Branches</li>
-              </ul>
-
-              <p>
-                Selected delegates are obligated to pay the delegate fee to
-                participate in the IEEE SL SYW Congress 2024.
-              </p>
-
-              <ul className="font-semibold list-disc pl-6 space-y-1">
-                <li>Delegate Fee will be valued at LKR 12,000.00 .</li>
-              </ul>
               <CustomTextInput
                 form={form}
                 name="whatEncouraged"
@@ -486,30 +580,19 @@ function RegisterForm() {
                   SL SYW Congress 2024.
                 </div>
               </CustomTextInput>
-              <CheckBoxesInput
+              <CustomTextInput
                 form={form}
-                name="previousParticipations"
-                checkItems={participation_years}
+                textArea={true}
+                name="volunteeringExperience"
               >
                 <div>
-                  If you have participated in previous years, select the years
-                  you participated.
+                  Mention your IEEE accomplishments or volunteering experiences
                 </div>
-              </CheckBoxesInput>
-              <CustomRadioInput
-                form={form}
-                name="learn"
-                selectItems={["Yes", "No"]}
-              >
-                <div>
-                  Would you like to learn how to become a member of IEEE
-                  Technical Societies?
-                </div>
-              </CustomRadioInput>
+              </CustomTextInput>
             </>
           )}
 
-          {exco && (
+          {(exco || foreign) && (
             <>
               <div className="font-bold text-lg">Delegate Pack</div>
               <p>Delegate Pack Includes : </p>
@@ -546,17 +629,17 @@ function RegisterForm() {
             </>
           )}
           <div>
-          <a
-            href="https://drive.google.com/drive/folders/1D8_KqICYTGU6fx5Kf2GleKccP4cb_Dle?usp=sharing"
-            target="_blank"
-          >
-            <div className="border rounded w-fit py-2 px-4 text-sm" >
-              {" "}
-              Download the Delegate booklet
-            </div>
-          </a>
+            <a
+              href="https://drive.google.com/drive/folders/1D8_KqICYTGU6fx5Kf2GleKccP4cb_Dle?usp=sharing"
+              target="_blank"
+            >
+              <div className="border rounded w-fit py-2 px-4 text-sm">
+                {" "}
+                Download the Delegate booklet
+              </div>
+            </a>
           </div>
-         
+
           <div className="font-bold text-lg">Terms & Conditions</div>
 
           <CheckBoxesInput
@@ -568,8 +651,21 @@ function RegisterForm() {
               Acceptance of IEEE policies is required to register for this
               event. By submitting your registration details, you acknowledge
               that you have read and are in agreement with the{" "}
-              <a className="underline" href="https://www.ieee.org/security-privacy.html" target="_blank">IEEE privacy policy</a> and the{" "}
-              <a className="underline" href="https://drive.google.com/drive/folders/1GODeLPMFKG9E5JIhS5HPySmMg-D4FrnD?usp=sharing" target="_blank">terms and conditions of the event.</a>
+              <a
+                className="underline"
+                href="https://www.ieee.org/security-privacy.html"
+                target="_blank"
+              >
+                IEEE privacy policy
+              </a>{" "}
+              and the{" "}
+              <a
+                className="underline"
+                href="https://drive.google.com/drive/folders/1GODeLPMFKG9E5JIhS5HPySmMg-D4FrnD?usp=sharing"
+                target="_blank"
+              >
+                terms and conditions of the event.
+              </a>
             </div>
           </CheckBoxesInput>
           <CheckBoxesInput
