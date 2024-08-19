@@ -180,9 +180,8 @@ const renderHtml = (values: any) => {
   </div>
 
     `
-  }
-
-  html += ` 
+  } else {
+    html += ` 
 <div style="max-width: 660px;">
 <div style="margin-bottom: 20px;  font-weight: bold;">
   <p">Registration for IEEE Sri Lanka Section Students | YP | WIE Congress 2024</p>
@@ -333,5 +332,7 @@ ${
 </div>
 </div>
 `
+  }
+
   return html
 }
