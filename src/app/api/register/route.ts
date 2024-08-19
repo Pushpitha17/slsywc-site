@@ -73,8 +73,12 @@ export async function POST(req: Request) {
       chapterMemberships
     } = formData
 
-    if (chapterMemberships) {
-      chapterMemberships = "None"
+    try {
+      if (!chapterMemberships.length) {
+        chapterMemberships = "None"
+      }
+    } catch (error) {
+      console.log("Error setting chaptermebership field")
     }
 
     if (foreign === "Yes") {
