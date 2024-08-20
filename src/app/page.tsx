@@ -10,6 +10,9 @@ import PastEvents from "@/components/Sections/PastEvents"
 import Organized from "@/components/Sections/Organized"
 import Footer from "@/components/Sections/Footer"
 import Team from "@/components/Sections/Team"
+import { MapPin, CalendarDays } from 'lucide-react';
+
+
 
 export default function Home() {
   return (
@@ -34,7 +37,17 @@ export default function Home() {
                   <span>&apos;24</span>
                 </div>
               </div>
-              <div className="py-6 text-center md:text-start">
+              <div className="pt-6 text-[#dcdde1]">
+                <div className="flex space-x-2 py-2">
+                  <MapPin  color="#E71010"></MapPin>
+                  <div className="font-bold">Hotel Sudu Araliya, Polonnaruwa</div>
+                </div>
+                <div className="flex space-x-2">
+                  <CalendarDays color="#E71010"/>
+                  <div className="font-bold">Sep 14 | 15 | 16 2024</div>
+                </div>
+              </div>
+              <div className="py-6 text-start md:text-start">
                 <Link href={"/register"}>
                   {" "}
                   <Button
