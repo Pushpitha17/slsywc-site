@@ -27,7 +27,7 @@ export default function Home() {
             src="/assets/hero_graphic.png"
           ></img>
           <div className="container mx-auto md:h-[calc(98%-150px)] ">
-            <div className="md:pt-24 pt-16 md:pl-24">
+            <div className="md:pt-24 pt-12 md:pl-24">
               <div className="mb-6 md:mb-3 font-semibold text-center md:text-start">
                 IEEE Sri Lanka Section Students | YP | WIE Congress{" "}
               </div>
@@ -48,7 +48,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="py-6 text-start md:text-start">
-                <Link href={"/register"}>
+                <Link href={"/register"} className="z-50">
                   {" "}
                   <Button
                     size={"lg"}
