@@ -82,7 +82,7 @@ const formSchema = z.object({
   learn: z.string().min(1, "Please select an option."),
   tShirtSize: z.string().min(1, "Please select an option."),
   privacy: z.string().array().nonempty("Please agree to the policy."),
-  consent: z.string().array().nonempty("Please agree to giving consent.")
+  consent: z.string().array().optional()
 })
 
 function RegisterForm() {
