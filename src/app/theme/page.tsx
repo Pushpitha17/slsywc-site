@@ -4,13 +4,10 @@ import Footer from "@/components/Sections/Footer"
 
 function ThemePage() {
   return (
-    <main className="min-h-screen w-full bg-primary-background text-primary-foreground relative bg-[url('/assets/bg_3.png')] bg-cover">
-      <div className="h-[2px] w-full bg-main-gradient absolute top-0 z-50"></div>
-      <Navbar></Navbar>
-      <div className="h-[69px] md:h-[85px]"></div>
+    <>
       <section className="w-full min-h-screen md:pt-20 pt-16">
         {/* <div className="text-2xl md:text-5xl font-bold md:w-2/3 text-center bg-text-gradient text-transparent bg-clip-text">
-          Revolutionizing the Digital Landscape
+          Theme for SLSYWC'24 
         </div> */}
         <div className="container flex flex-col items-center">
           <div className="md:w-1/2 mx-auto">
@@ -29,9 +26,14 @@ function ThemePage() {
           </p>
         </div>
       </section>
-        <Footer></Footer>
-    </main>
+      <div></div>
+    </>
   )
 }
 
 export default ThemePage
+
+
+const themeItem = () => {
+  
+}
