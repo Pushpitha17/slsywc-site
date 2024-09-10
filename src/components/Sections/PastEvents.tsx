@@ -2,14 +2,14 @@ import React from "react"
 
 function PastEvents() {
   return (
-    <section className="my-12">
+    <section className="my-24">
       <div className="container">
         <div className="md:hidden text-center">
           <h2 className="text-2xl md:text-5xl font-bold bg-text-gradient text-transparent bg-clip-text uppercase">
             Glimpse from 2023
           </h2>
         </div>
-        <div className="md:flex md:min-h-screen justify-center gap-6">
+        <div className="md:flex justify-center gap-6">
           <div className="md:w-1/2 md:h-max-content">
             <div className="hidden md:block mb-12">
               <h2 className="text-2xl md:text-5xl font-bold bg-text-gradient text-transparent bg-clip-text uppercase">
