@@ -12,7 +12,7 @@ function ThemeItem({
   return (
     <div
       key={number}
-      className="p-6 md:border md:border-[#9E0521] rounded-3xl"
+      className="p-4 md:p-6 border border-[#9E0521] rounded-3xl"
     >
       <div className="flex md:items-end mb-2  bg-text-gradient text-transparent bg-clip-text">
         <span className="text-4xl font-bold  mr-2">{number}{"."}</span>

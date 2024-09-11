@@ -26,7 +26,7 @@ function ThemePage() {
             <Link href="/">
               <div className="flex ml-14 space-x-1 text-[#E71010] items-center">
                 <ChevronLeft strokeWidth={3} color="#E71010" />
-                <span>Back</span>
+                <span>Home</span>
               </div>
             </Link>
           </div>
@@ -41,7 +41,7 @@ function ThemePage() {
           <div className="md:w-1/2 mx-auto">
             <img src="/assets/theme.png" alt="" />
           </div>
-          <p className="my-12 max-w-[100ch] text-center">
+          <p className="my-12 max-w-[100ch] md:text-center">
             The IEEE Sri Lanka Section Student | Young Professionals | Women in
             Engineering Congress 2024 will serve as the 13th installment of the
             largest technical conference in the country. It would pose as a
@@ -56,8 +56,9 @@ function ThemePage() {
       </section>
       <section className="container py-5 mb-10">
         <div className="grid gird-cols-1 md:grid-cols-3 gap-6">
-          {data.map((item) => (
+          {data.map((item,i) => (
             <ThemeItem
+              key={i}
               number={item.number}
               title={item.title}
               description={item.description}
