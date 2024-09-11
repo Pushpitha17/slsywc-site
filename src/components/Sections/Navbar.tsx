@@ -27,37 +27,37 @@ function Navbar() {
     })
   }
 
-  const elementIsVisibleInViewport = (el: HTMLElement | null, partiallyVisible = true) => {
-    if(!el) return false
-    const { top, left, bottom, right } = el.getBoundingClientRect();
-    const { innerHeight, innerWidth } = window;
+  const elementIsVisibleInViewport = (
+    el: HTMLElement | null,
+    partiallyVisible = true
+  ) => {
+    if (!el) return false
+    const { top, left, bottom, right } = el.getBoundingClientRect()
+    const { innerHeight, innerWidth } = window
     return partiallyVisible
       ? ((top > 0 && top < innerHeight) ||
           (bottom > 0 && bottom < innerHeight)) &&
           ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
-      : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
-  };
-
-    
-  const setActiveLinks = () => {
-
-    if (elementIsVisibleInViewport(document.getElementById("home"))) {
-        setActiveLink("Home")
-    } 
-    if (elementIsVisibleInViewport(document.getElementById("about"))) {
-        setActiveLink("About")
-    } 
-    if (elementIsVisibleInViewport(document.getElementById("theme"))) {
-        setActiveLink("Theme")
-    } 
-    if (elementIsVisibleInViewport(document.getElementById("organized"))) {
-        setActiveLink("Organizers")
-    } 
-    if (elementIsVisibleInViewport(document.getElementById("faq"))) {
-        setActiveLink("FAQ")
-    } 
+      : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth
   }
 
+  const setActiveLinks = () => {
+    if (elementIsVisibleInViewport(document.getElementById("home"))) {
+      setActiveLink("Home")
+    }
+    if (elementIsVisibleInViewport(document.getElementById("about"))) {
+      setActiveLink("About")
+    }
+    if (elementIsVisibleInViewport(document.getElementById("theme"))) {
+      setActiveLink("Theme")
+    }
+    if (elementIsVisibleInViewport(document.getElementById("organized"))) {
+      setActiveLink("Organizers")
+    }
+    if (elementIsVisibleInViewport(document.getElementById("faq"))) {
+      setActiveLink("FAQ")
+    }
+  }
 
   const [activeLink, setActiveLink] = useState("Home")
 
@@ -99,12 +99,12 @@ function Navbar() {
             <div className="flex items-center flex-shrink-0">
               <a href="/#">
                 <img
-                className={clsx("mr-2 duration-500 h-12", {
-                  "h-16 md:h-20": !hasScrolled
-                })}
-                src="/assets/Congress Logo 2024.svg"
-                alt="Logo"
-              />
+                  className={clsx("mr-2 duration-500 h-12", {
+                    "h-16 md:h-20": !hasScrolled
+                  })}
+                  src="/assets/Congress Logo 2024.svg"
+                  alt="Logo"
+                />
               </a>
             </div>
             <ul className="hidden lg:flex ml-14 space-x-12 ">
@@ -128,6 +128,9 @@ function Navbar() {
                   </div>
                 </li>
               ))}
+              <li>
+                <Link href="/register">Register</Link>
+              </li>
             </ul>
             <div className="lg:hidden md:flex flex-col justify-end">
               <HamburgerMenu
@@ -155,6 +158,9 @@ function Navbar() {
                     </div>
                   </li>
                 ))}
+                <li className="py-3 pl-8 border-b-2 border-primary-background">
+                  <Link href="/register">Register</Link>
+                </li>
               </ul>
             </div>
           )}

@@ -48,7 +48,10 @@ export default function Home() {
                 </div>
               </div>
               <div className="py-6 text-start md:text-start">
-                <Link href={"/register"} className="z-50">
+                <div className="py-2 text-red-500 font-medium">
+                  Registrations Closed. 
+                </div>
+                {/* <Link href={"/register"} className="z-50">
                   {" "}
                   <Button
                     size={"lg"}
@@ -57,7 +60,7 @@ export default function Home() {
                   >
                     Register to SLSYWC&apos;24
                   </Button>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
