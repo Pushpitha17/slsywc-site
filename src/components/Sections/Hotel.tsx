@@ -11,7 +11,7 @@ function Hotel() {
             Location
           </h2>
         </div>
-        <div className="mb-8" >
+        <div className="mb-8 md:hidden block " >
           <h3 className="font-semibold text-xl md:text-4xl  md:mb-2">
             Hotel Sudu Araliya
           </h3>
