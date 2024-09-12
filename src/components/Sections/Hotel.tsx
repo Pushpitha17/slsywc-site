@@ -39,11 +39,11 @@ function Hotel() {
               </div>
             </div>
             <p className="text-justify md:text-left mb-4 text-sm">
-              The spectacular remains of Polonnaruwa, Sri Lanka's second ancient
+              The spectacular remains of Polonnaruwa, Sri Lanka&apos;s second ancient
               city, articulately depict some of the best-preserved architectural
-              masterpieces of the era. Located in Sri Lanka's North Western
+              masterpieces of the era. Located in Sri Lanka&apos;s North Western
               Province, Polonnaruwa is about 230 kilometers away from Colombo,
-              the country's capital. 
+              the country&apos;s capital. 
             </p>
             <div>
               <a
