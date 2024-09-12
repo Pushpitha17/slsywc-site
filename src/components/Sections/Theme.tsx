@@ -1,5 +1,6 @@
 import React from "react"
-// import { ChevronRight } from "lucide-react"
+import Link from "next/link"
+import { ChevronRight } from "lucide-react"
 
 function Theme() {
   return (
@@ -37,11 +38,22 @@ function Theme() {
               country, serving as the 13th installment. It would pose as a
               platform that unites researchers, academics, students, and
               industry professionals from diverse backgrounds to discuss and
-              share their insights and experiences in accordance with the theme {"  "}
-              <span className="font-bold text-foreground">&lsquo;Revolutionizing the Digital Landscape&lsquo;</span>.
+              share their insights and experiences in accordance with the theme{" "}
+              {"  "}
+              <span className="font-bold text-foreground">
+                &lsquo;Revolutionizing the Digital Landscape&lsquo;
+              </span>
+              .
             </p>
             <div className="my-6">
-              <button>Learn More about the Theme</button>
+              <div className="flex">
+                <Link href="/theme">
+                  <div className="flex space-x-2 items-center py-2 px-3 border border-[#9E0521] rounded">
+                    <span className="bg-text-gradient text-transparent bg-clip-text font-bold uppercase">More about our Theme </span>
+                    <ChevronRight color="#9E0521"/>
+                  </div>
+                </Link>
+              </div>
             </div>
             {/* <div className="flex">
               <button className="py-2 pl-6 pr-3 text-foreground font-medium border border-red-700 rounded-[8px] text-base flex">

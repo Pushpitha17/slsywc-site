@@ -10,6 +10,7 @@ import PastEvents from "@/components/Sections/PastEvents"
 import Organized from "@/components/Sections/Organized"
 import Footer from "@/components/Sections/Footer"
 import Team from "@/components/Sections/Team"
+import Hotel from "@/components/Sections/Hotel"
 import { MapPin, CalendarDays } from 'lucide-react';
 
 
@@ -101,6 +102,7 @@ export default function Home() {
       <div className="min-h-screen bg-cover">
         <Welcome />
         <Theme />
+        <Hotel />
         <Sponsors />
         <PastEvents />
         <Organized />
