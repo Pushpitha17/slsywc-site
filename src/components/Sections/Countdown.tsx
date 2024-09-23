@@ -84,10 +84,10 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     <div
       ref={ref}
       className="flex flex-col justify-center items-center space-x-4 text-white bg-main-gradient h-56 md:h-72"
-    > <div className="mb-8 md:mb-16 text-xl md:text-4xl tracking-widest">
-        <p className={orbitron.className}>Event Will Commence In</p>
+    > <div className=" text-xl md:text-4xl tracking-widest">
+        <p className={orbitron.className}>Event Concludes Successfully</p>
     </div>
-      <div className="container flex justify-between max-w-[720px]">
+      {/* <div className="container flex justify-between max-w-[720px]">
         {(Object.entries(counts) as [keyof Counts, number][]).map(
           ([unit, value]) => (
             <div key={unit} className={`${orbitron.className} text-center`}>
@@ -98,7 +98,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
             </div>
           )
         )}
-      </div>
+      </div> */}
     </div>
   )
 }
