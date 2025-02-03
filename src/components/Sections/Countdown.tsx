@@ -83,7 +83,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   return (
     <div
       ref={ref}
-      className="flex flex-col justify-center items-center space-x-4 text-white bg-main-gradient h-56 md:h-72"
+      className="flex flex-col justify-center items-center space-x-4 text-white bg-main-gradient h-56 md:h-72 "
     >
       {" "}
       {/* <div className=" text-xl md:text-4xl tracking-widest">

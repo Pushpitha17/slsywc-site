@@ -40,7 +40,7 @@ function Theme() {
               industry professionals from diverse backgrounds to discuss and
               share their insights and experiences in accordance with the theme{" "}
               {"  "}
-              <span className="font-bold text-foreground text-[#2563eb]">
+              <span className="font-bold bg-text-gradient text-transparent bg-clip-text">
                 &lsquo;Innovation for sustainability&lsquo;
               </span>
               .
@@ -48,11 +48,13 @@ function Theme() {
             <div className="my-6">
               <div className="flex">
                 <Link href="/theme">
-                  <div className="flex space-x-2 items-center py-2 px-3 border border-[#2563eb] rounded">
-                    <span className="bg-text-gradient text-transparent bg-clip-text font-bold uppercase">
-                      More about our Theme{" "}
-                    </span>
-                    <ChevronRight color="#2563eb" />
+                  <div className="border-gradient p-[2px] rounded flex items-center justify-center">
+                    <div className="flex space-x-2 items-center py-2 px-3 bg-black border-none border rounded">
+                      <span className="bg-text-gradient text-transparent bg-clip-text font-bold uppercase">
+                        More about our Theme{" "}
+                      </span>
+                      <ChevronRight color="#2563eb" />
+                    </div>
                   </div>
                 </Link>
               </div>

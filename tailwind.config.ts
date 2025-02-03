@@ -23,6 +23,9 @@ const config = {
         "vh-less-600": { raw: "(max-height: 700px)" }
       },
       colors: {
+        "main-blue-1": "rgba(0, 76, 241, 1)",
+        "main-blue-2": "rgba(0,187,187,1)",
+        "main-green": "rgba(0,184,54,1)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -60,8 +63,9 @@ const config = {
       },
       backgroundImage: {
         "main-gradient":
-          "linear-gradient(to right, #0A84FF 0%, #00B8A9 50%, #0A84FF 100%)",
-        "text-gradient": "linear-gradient(to right, #0A84FF 0%, #00B8A9 100%)"
+          "linear-gradient(to right, rgba(0,76,241,1) 0%, rgba(0,187,187,1) 50%, rgba(0,184,54,1) 100%)",
+        "text-gradient":
+          "linear-gradient(to right, rgba(0,76,241,1) 0%, rgba(0,187,187,1) 50%, rgba(0,184,54,1) 100%)"
         // 'text-gradient': 'linear-gradient(to right, #FFBB00 0%, #ED1B34 100%)'
       },
       borderRadius: {

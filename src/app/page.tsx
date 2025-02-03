@@ -31,7 +31,7 @@ export default function Home() {
                 IEEE Sri Lanka Section Students | YP | WIE Congress{" "}
               </div>
               <div className="font-bold text-[3.5rem] leading-[4rem] md:text-[6rem] md:leading-[6rem] text-center md:text-start">
-                <div className="md:flex-col inline-flex bg-[linear-gradient(to_right,#2563eb,#2DD4BF,#2563eb,#2DD4BF,#2563eb)] text-transparent bg-clip-text bg-[length:200%_auto] animate-gradient-animation">
+                <div className="md:flex-col inline-flex bg-[linear-gradient(to_right,#004cf1,#00BBBB,#00b836,#004cf1)] text-transparent bg-clip-text bg-[length:200%_auto] animate-gradient-animation">
                   <span>SLSYWC</span>
                   <span>&apos;25</span>
                 </div>
