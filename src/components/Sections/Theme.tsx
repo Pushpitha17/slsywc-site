@@ -8,7 +8,7 @@ function Theme() {
       <div className="container flex-col">
         <div className="flex items-center justify-center h-full">
           <p className="text-2xl md:text-5xl font-bold md:w-2/3 text-center bg-text-gradient text-transparent bg-clip-text md:mb-8">
-            Introducing the Theme of IEEE SLSYWC Congress 2024!
+            Introducing the Theme of IEEE SLSYWC Congress 2025!
           </p>
         </div>
         <div className="md:flex items-center justify-center gap-6 ">
@@ -20,7 +20,7 @@ function Theme() {
               IEEE SLSYWC Congress 2024!
             </p>
           </div> */}
-          <div className="md:w-1/2 duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(255,0,0,0.3)]">
+          <div className="md:w-1/2 duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(37,99,235,0.3)]">
             <img src="/assets/theme.png" alt="" />
           </div>
           <div className="md:w-1/2 md:max-w-[40ch]">
@@ -40,17 +40,19 @@ function Theme() {
               industry professionals from diverse backgrounds to discuss and
               share their insights and experiences in accordance with the theme{" "}
               {"  "}
-              <span className="font-bold text-foreground">
-                &lsquo;Revolutionizing the Digital Landscape&lsquo;
+              <span className="font-bold text-foreground text-[#2563eb]">
+                &lsquo;Innovation for sustainability&lsquo;
               </span>
               .
             </p>
             <div className="my-6">
               <div className="flex">
                 <Link href="/theme">
-                  <div className="flex space-x-2 items-center py-2 px-3 border border-[#9E0521] rounded">
-                    <span className="bg-text-gradient text-transparent bg-clip-text font-bold uppercase">More about our Theme </span>
-                    <ChevronRight color="#9E0521"/>
+                  <div className="flex space-x-2 items-center py-2 px-3 border border-[#2563eb] rounded">
+                    <span className="bg-text-gradient text-transparent bg-clip-text font-bold uppercase">
+                      More about our Theme{" "}
+                    </span>
+                    <ChevronRight color="#2563eb" />
                   </div>
                 </Link>
               </div>

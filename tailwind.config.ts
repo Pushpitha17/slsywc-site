@@ -60,8 +60,8 @@ const config = {
       },
       backgroundImage: {
         "main-gradient":
-          "linear-gradient(to right, #9E0521 0%, #E71010 50%,  #9E0521 100%)",
-        "text-gradient": "linear-gradient(to right, #E71010 0%, #9E0521 100%)"
+          "linear-gradient(to right, #0A84FF 0%, #00B8A9 50%, #0A84FF 100%)",
+        "text-gradient": "linear-gradient(to right, #0A84FF 0%, #00B8A9 100%)"
         // 'text-gradient': 'linear-gradient(to right, #FFBB00 0%, #ED1B34 100%)'
       },
       borderRadius: {
@@ -103,9 +103,7 @@ const config = {
       }
     }
   },
-  plugins: [require("tailwindcss-animate"),
-    require('@tailwindcss/forms'),
-  ]
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/forms")]
 } satisfies Config
 
 export default config

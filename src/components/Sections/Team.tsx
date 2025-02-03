@@ -1,11 +1,9 @@
 import React from "react"
 
 const teamData = {
-  chair: [
-    
-  ],
+  chair: [],
   viceChair: [
-  {
+    {
       img: "Priyan.png",
       post: "Chair",
       pillar: " ",
@@ -208,9 +206,13 @@ function Chair({
 }) {
   return (
     <div className="w-[150px] md:w-[190px] relative mx-2">
-      <img src={`/assets/Team/${img}`} alt="" className="absolute w-[90%] left-[5%]" />
+      <img
+        src={`/assets/Team/${img}`}
+        alt=""
+        className="absolute w-[90%] left-[5%]"
+      />
       <div className="h-[100px] md:h-[140px]"></div>
-      <div className="flex flex-col items-center border border-dashed border-red-900 pt-[60px] pb-4 rounded-2xl bg-black space-y-1">
+      <div className="flex flex-col items-center border border-dashed border-blue-900 pt-[60px] pb-4 rounded-2xl bg-black space-y-1">
         <p className="font-semibold">{post}</p>
         <p className="font-bold bg-text-gradient text-transparent bg-clip-text">
           {name}
@@ -235,7 +237,7 @@ function ViceChair({
   uni: string
 }) {
   return (
-    <div className="w-[150px] md:w-[190px] flex flex-col items-center duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(255,0,0,0.5)]">
+    <div className="w-[150px] md:w-[190px] flex flex-col items-center duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(37,99,235,0.3)]">
       <img src={`/assets/Team/${img}`} alt="" className="mb-2 w-full " />
       <div className="flex flex-col items-center pb-4 space-y-1 text-sm md:text-base">
         <p className="font-medium">{post}</p>
@@ -261,7 +263,7 @@ function TeamMember({
   uni: string
 }) {
   return (
-    <div className="w-[150px] md:w-[190px] flex flex-col items-center duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(255,0,0,0.5)]">
+    <div className="w-[150px] md:w-[190px] flex flex-col items-center duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(37,99,235,0.3)]">
       <img src={`/assets/Team/${img}`} alt="" className="w-full mb-2" />
       <div className="flex flex-col items-center pb-4 space-y-1 text-sm md:text-base">
         <p className="font-medium">{post}</p>

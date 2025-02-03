@@ -7,19 +7,19 @@ import {
 } from "@/components/ui/accordion"
 
 const data = [
-    {
-    q: "1. Who can attend the SLSYWC 2024?",
-    ans: "The SLSYWC 2024 is open to a diverse group of participants including undergraduates, graduates, academics, and industry professionals. It is designed to cater participants from all of the above mentioned categories, providing valuable insights and opportunities for all attendees."
+  {
+    q: "1. Who can attend the SLSYWC 2025?",
+    ans: "The SLSYWC 2025 is open to a diverse group of participants including undergraduates, graduates, academics, and industry professionals. It is designed to cater participants from all of the above mentioned categories, providing valuable insights and opportunities for all attendees."
   },
   {
-    q: "2. What is the delegate fee for the SLSYWC 2024?",
-    ans: "The delegate fee for participating in the SLSYWC 2024 is 12,000 LKR per participant. This fee covers access to all sessions, workshops, and networking events over the three days, as well as meals and other congress materials."
+    q: "2. What is the delegate fee for the SLSYWC 2025?",
+    ans: "The delegate fee for participating in the SLSYWC 2025 is 12,000 LKR per participant. This fee covers access to all sessions, workshops, and networking events over the three days, as well as meals and other congress materials."
   },
   {
-    q: "3. How do I register for the IEEE SL SYW Congress 2024?",
+    q: "3. How do I register for the IEEE SL SYW Congress 2025?",
     ans: "All attendees must register online via the official registration link: https://sywc.ieee.lk/register before the deadline of 25th August 2024 at 11:59:59 PM. Early registration is recommended due to limited on-site accommodation."
   },
-   {
+  {
     q: "4. What happens if I miss the registration deadline?",
     ans: "Registrations after the deadline of 25th August 2024 may still be accepted under specific conditions set by the IEEE Sri Lanka Section. Late registrations may incur additional late fees, and acceptance is not guaranteed."
   },
@@ -35,7 +35,7 @@ const data = [
   {
     q: "7. What can participants expect from the SLSYWC 2024?",
     ans: "Participants can expect a variety of activities including keynote speeches from esteemed national and international speakers, technical sessions, workshops, outbound sessions and panel discussions. The congress will cover the latest trends and advancements in engineering and technology, and offer numerous networking opportunities with peers and industry leaders."
-  },
+  }
 ]
 
 function FAQ() {
@@ -54,8 +54,14 @@ function FAQ() {
             className="max-w-[760px] mx-auto"
           >
             {data.map((item, index) => (
-              <AccordionItem value={`item-${index}`} className="border-[#9f071a]" key={index}>
-                <AccordionTrigger><p className="text-start">{item.q}</p></AccordionTrigger>
+              <AccordionItem
+                value={`item-${index}`}
+                className="border-[#2563eb]"
+                key={index}
+              >
+                <AccordionTrigger>
+                  <p className="text-start">{item.q}</p>
+                </AccordionTrigger>
                 <AccordionContent>{item.ans}</AccordionContent>
               </AccordionItem>
             ))}

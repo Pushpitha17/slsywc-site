@@ -84,9 +84,16 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     <div
       ref={ref}
       className="flex flex-col justify-center items-center space-x-4 text-white bg-main-gradient h-56 md:h-72"
-    > <div className=" text-xl md:text-4xl tracking-widest">
+    >
+      {" "}
+      {/* <div className=" text-xl md:text-4xl tracking-widest">
         <p className={orbitron.className}>Event Concludes Successfully</p>
-    </div>
+      </div> */}
+      <div className=" text-xl md:text-4xl tracking-widest">
+        <p className={`${orbitron.className} px-3 text-center`}>
+          Gear Up for the Ultimate Experience – The Countdown Begins!
+        </p>
+      </div>
       {/* <div className="container flex justify-between max-w-[720px]">
         {(Object.entries(counts) as [keyof Counts, number][]).map(
           ([unit, value]) => (
