@@ -128,9 +128,9 @@ function Navbar() {
                   </div>
                 </li>
               ))}
-              <li>
+              {/* <li>
                 <Link href="/register">Register</Link>
-              </li>
+              </li> */}
             </ul>
             <div className="lg:hidden md:flex flex-col justify-end">
               <HamburgerMenu
@@ -158,9 +158,9 @@ function Navbar() {
                     </div>
                   </li>
                 ))}
-                <li className="py-3 pl-8 border-b-2 border-primary-background">
+                {/* <li className="py-3 pl-8 border-b-2 border-primary-background">
                   <Link href="/register">Register</Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           )}
