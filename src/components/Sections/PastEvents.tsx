@@ -17,7 +17,7 @@ function PastEvents() {
               </h2>
             </div>
             <img
-              src="/assets/past_desktop.png"
+              src="/2025/group.png"
               className="hidden md:block duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(37,99,235,0.3)]"
               alt=""
             />

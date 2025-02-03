@@ -20,8 +20,12 @@ function Theme() {
               IEEE SLSYWC Congress 2024!
             </p>
           </div> */}
-          <div className="md:w-1/2 duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(37,99,235,0.3)]">
-            <img src="/assets/theme.png" alt="" />
+          <div className="md:w-1/2 relative duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(37,99,235,0.3)]">
+            <img
+              className="object-cover object-center"
+              src="/2025/IEEEConSite.png"
+              alt=""
+            />
           </div>
           <div className="md:w-1/2 md:max-w-[40ch]">
             {/* <div className="hidden md:block">
@@ -32,7 +36,7 @@ function Theme() {
                 IEEE SLSYWC Congress 2024!
               </p>
             </div> */}
-            <p className="my-6 text-justify md:text-left md:text-[22px]">
+            <p className=" text-justify md:text-left md:text-[22px]">
               Embark on a transformative journey into the future of digital
               innovation at this year&apos;s largest technical conference in the
               country, serving as the 13th installment. It would pose as a

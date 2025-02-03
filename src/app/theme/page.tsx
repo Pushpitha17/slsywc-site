@@ -24,8 +24,8 @@ function ThemePage() {
               </a>
             </div>
             <Link href="/">
-              <div className="flex ml-14 space-x-1 text-[#E71010] items-center">
-                <ChevronLeft strokeWidth={3} color="#E71010" />
+              <div className="flex ml-14 space-x-1 text-[rgba(0,76,241,1)] items-center">
+                <ChevronLeft strokeWidth={3} color="rgba(0,76,241,1)" />
                 <span>Home</span>
               </div>
             </Link>
@@ -56,7 +56,7 @@ function ThemePage() {
       </section>
       <section className="container py-5 mb-10">
         <div className="grid gird-cols-1 md:grid-cols-3 gap-6">
-          {data.map((item,i) => (
+          {data.map((item, i) => (
             <ThemeItem
               key={i}
               number={item.number}
@@ -73,7 +73,4 @@ function ThemePage() {
 
 export default ThemePage
 
-
-const themeItem = () => {
-  
-}
+const themeItem = () => {}

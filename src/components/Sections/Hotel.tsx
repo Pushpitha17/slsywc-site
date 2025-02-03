@@ -21,10 +21,10 @@ function Hotel() {
           </div>
         </div>
         <div className="md:flex justify-center gap-6">
-          <div className="md:w-1/2 md:h-max-content flex items-center justify-center">
+          <div className="md:w-1/2 md:h-max-content flex items-center justify-center rounded-3xl ">
             <img
               src="/2025/cinnamon-life.jpg"
-              className="duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(37,99,235,0.3)]"
+              className="duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(37,99,235,0.3)] object-cover object-center rounded-3xl"
               alt=""
             />
           </div>
@@ -53,7 +53,7 @@ function Hotel() {
               >
                 {/* border-solid border-b-[2px] border-[#9E0521]  */}
                 <div className="flex bg-text-gradient text-transparent bg-clip-text ">
-                  <p className="font-semibold underline  decoration-[#2563eb] underline-offset-4">
+                  <p className="font-semibold underline decoration-[#2563eb] underline-offset-8">
                     Visit Website
                   </p>
                   <ChevronRight color="#2563eb" />
