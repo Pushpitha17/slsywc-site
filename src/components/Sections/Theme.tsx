@@ -37,15 +37,14 @@ function Theme() {
               </p>
             </div> */}
             <p className=" text-justify md:text-left md:text-[22px]">
-              Embark on a transformative journey into the future of digital
-              innovation at this year&apos;s largest technical conference in the
-              country, serving as the 13th installment. It would pose as a
-              platform that unites researchers, academics, students, and
-              industry professionals from diverse backgrounds to discuss and
-              share their insights and experiences in accordance with the theme{" "}
-              {"  "}
+              Witness the inspiring experience of an attempt to empower
+              innovations for a better tomorrow with the 14th installment of the
+              largest technical conference in the country. Uniting researchers,
+              academics, industry professionals, and students from diverse
+              backgrounds to share their thoughts, insights, and experiences,
+              the SLSYW Congress 2025 will unravel under the theme{"  "}
               <span className="font-bold bg-text-gradient text-transparent bg-clip-text">
-                &lsquo;Innovation for sustainability&lsquo;
+                &lsquo;Innovation for Sustainability&lsquo;
               </span>
               .
             </p>

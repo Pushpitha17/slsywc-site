@@ -24,8 +24,8 @@ function ThemePage() {
               </a>
             </div>
             <Link href="/">
-              <div className="flex ml-14 space-x-1 text-[rgba(0,76,241,1)] items-center">
-                <ChevronLeft strokeWidth={3} color="rgba(0,76,241,1)" />
+              <div className="flex ml-14 space-x-1 text-main-green items-center">
+                <ChevronLeft strokeWidth={3} color="rgba(0,184,54,1)" />
                 <span>Home</span>
               </div>
             </Link>
@@ -43,13 +43,14 @@ function ThemePage() {
           </div>
           <p className="my-12 max-w-[100ch] md:text-center">
             The IEEE Sri Lanka Section Student | Young Professionals | Women in
-            Engineering Congress 2024 will serve as the 13th installment of the
-            largest technical conference in the country. It would pose as a
+            Engineering Congress 2025 will be the 14th installment of the
+            largest technical conference in the country. It will serve as a
             platform that unites researchers, academics, students, and industry
             professionals from diverse backgrounds to discuss and share their
-            insights and experiences in accordance with the theme {"  "}
-            <span className="font-bold">
-              &lsquo;Revolutionizing the Digital Landscape&lsquo;.
+            thoughts, insights, and experiences on the theme{"  "}
+            <br />
+            <span className="font-bold bg-text-gradient text-transparent bg-clip-text">
+              &lsquo;Innovation for Sustainability&lsquo;.
             </span>
           </p>
         </div>

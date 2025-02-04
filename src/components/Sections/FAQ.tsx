@@ -56,7 +56,7 @@ function FAQ() {
             {data.map((item, index) => (
               <AccordionItem
                 value={`item-${index}`}
-                className="border-[rgba(0,76,241,1)]"
+                className="border-[rgba(0,184,54,1)]"
                 key={index}
               >
                 <AccordionTrigger>
