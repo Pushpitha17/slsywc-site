@@ -22,7 +22,7 @@ function PastEvents() {
               alt=""
             />
             <img
-              src="/assets/past_mobile.png"
+              src="/2025/group-mobile.png"
               className="md:hidden mx-auto my-12 w-full"
               alt=""
             />

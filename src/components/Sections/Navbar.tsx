@@ -102,7 +102,7 @@ function Navbar() {
                   className={clsx("mr-2 duration-500 h-12", {
                     "h-16 md:h-20": !hasScrolled
                   })}
-                  src="/assets/Congress Logo 2024.svg"
+                  src="/2025/main-logo.svg"
                   alt="Logo"
                 />
               </a>

@@ -6,7 +6,7 @@ function Theme() {
   return (
     <section id="theme" className="my-24">
       <div className="container flex-col">
-        <div className="flex items-center justify-center h-full">
+        <div className="flex items-center justify-center h-full mb-5 md:mb-0">
           <p className="text-2xl md:text-5xl font-bold md:w-2/3 text-center bg-text-gradient text-transparent bg-clip-text md:mb-8">
             Introducing the Theme of IEEE SLSYWC Congress 2025!
           </p>
@@ -23,11 +23,11 @@ function Theme() {
           <div className="md:w-1/2 relative duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(37,99,235,0.3)]">
             <img
               className="object-cover object-center"
-              src="/2025/IEEEConSite.png"
+              src="/2025/theme-logo.svg"
               alt=""
             />
           </div>
-          <div className="md:w-1/2 md:max-w-[40ch]">
+          <div className="md:w-1/2 md:max-w-[40ch] my-5 md:my-0 ">
             {/* <div className="hidden md:block">
               <p className="text-lg font-bold text-center  md:text-start">
                 Introducing the Theme for

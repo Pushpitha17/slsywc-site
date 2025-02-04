@@ -4,25 +4,25 @@ const teamData = {
   chair: [],
   viceChair: [
     {
-      img: "Priyan.png",
+      img: "manodya.png",
       post: "Chair",
-      pillar: "",
+      pillar: "Student Activity Committee",
       name: "Mr. Manodya Nabadawewa",
-      uni: "UOM"
+      uni: ""
     },
     {
-      img: "Priyan.png",
+      img: "joshiga.png",
       post: "Section Student Representative",
-      pillar: "",
+      pillar: "Student Activity Committee",
       name: "Ms. Joshiga Revikumar",
-      uni: "IIT"
+      uni: ""
     },
     {
-      img: "Priyan.png",
+      img: "uvindu.png",
       post: "Vice Chair",
-      pillar: "",
+      pillar: "Student Activity Committee",
       name: "Mr. Uvindu Kodikara",
-      uni: "UOM"
+      uni: ""
     }
   ],
   Team: [
@@ -148,7 +148,7 @@ function Team() {
           </div>
           <div className="md:hidden">
             <div>
-              <div className="flex flex-wrap justify-between gap-y-4 my-12">
+              <div className="flex flex-wrap justify-between items-center gap-y-4 my-12">
                 {teamData.viceChair.map((item, index) => (
                   <ViceChair
                     key={index}
@@ -223,14 +223,15 @@ function ViceChair({
   uni: string
 }) {
   return (
-    <div className="w-[150px] md:w-[250px] flex flex-col items-center duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(37,99,235,0.3)]">
+    <div className="w-[150px] md:w-[200px] flex flex-col items-center duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(37,99,235,0.3)]">
       <img src={`/2025/team/${img}`} alt="" className="mb-2 w-full " />
       <div className="flex flex-col text-center justify-center items-center pb-4 space-y-1 text-sm md:text-base">
-        <p className="font-medium">{post}</p>
-        <p className="font-light text-xs">{pillar}</p>
         <p className="font-semibold bg-text-gradient text-transparent bg-clip-text w-full">
           {name}
         </p>
+        <p className="font-medium">{post}</p>
+        <p className="font-light text-xs">{pillar}</p>
+
         <p className="font-extralight">{uni}</p>
       </div>
     </div>
