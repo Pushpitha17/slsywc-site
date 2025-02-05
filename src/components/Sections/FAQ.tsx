@@ -9,33 +9,33 @@ import {
 const data = [
   {
     q: "1. Who can attend the SLSYWC 2025?",
-    ans: "The SLSYWC 2025 is open to a diverse group of participants including undergraduates, graduates, academics, and industry professionals. It is designed to cater participants from all of the above mentioned categories, providing valuable insights and opportunities for all attendees."
+    ans: `SLSYWC 2025 is open to a wide range of participants, including undergraduates, graduates, academics, tech enthusiasts, and industry professionals who are passionate about innovation and sustainability. `
   },
   {
-    q: "2. What is the delegate fee for the SLSYWC 2025?",
-    ans: "The delegate fee for participating in the SLSYWC 2025 is 12,000 LKR per participant. This fee covers access to all sessions, workshops, and networking events over the three days, as well as meals and other congress materials."
+    q: "2. When will SLSYWC 2025 be held?",
+    ans: `The congress will take place on September 19th 20th, and 21st, 2025, in Colombo.`
   },
-  // {
-  //   q: "3. How do I register for the IEEE SL SYW Congress 2025?",
-  //   ans: "All attendees must register online via the official registration link: https://sywc.ieee.lk/register before the deadline of 25th August 2024 at 11:59:59 PM. Early registration is recommended due to limited on-site accommodation."
-  // },
-  // {
-  //   q: "4. What happens if I miss the registration deadline?",
-  //   ans: "Registrations after the deadline of 25th August 2024 may still be accepted under specific conditions set by the IEEE Sri Lanka Section. Late registrations may incur additional late fees, and acceptance is not guaranteed."
-  // },
-  // {
-  //   q: "5. What are the payment options available for local and foreign delegates?",
-  //   ans: "Local delegates can make payments through their respective student branches, affinity groups, or the IEEE Sri Lanka Section. Foreign delegates can pay via credit or debit cards through the online registration system. In special cases, bank transfers may be accepted with prior arrangement and may incur an additional processing fee."
-  // },
+  {
+    q: "3. How can I register for SLSYWC 2025?",
+    ans: `All attendees must register online through the official registration link, which will be available on this website in late August or early September.`
+  },
+  {
+    q: "4. How can I stay updated on event details?",
+    ans: `Stay informed by following our official website and social media pages, where we will share the latest updates on schedules, speakers, and registration details.`
+  },
+  {
+    q: "5. What is the theme of SLSYWC 2025?",
+    ans: `The theme for this year’s congress is “Innovation for Sustainability”, focusing on how technology can drive sustainable solutions for a better future.`
+  }
   // {
   //   q: "6. Is it possible to cancel my registration or transfer it to someone else?",
   //   ans: "No, registrations for the IEEE SL SYW Congress 2024 are non-transferable and cannot be cancelled. Additionally, the registration fee is non-refundable under any circumstances."
   // },
 
-  {
-    q: "7. What can participants expect from the SLSYWC 2025?",
-    ans: "Participants can expect a variety of activities including keynote speeches from esteemed national and international speakers, technical sessions, workshops, outbound sessions and panel discussions. The congress will cover the latest trends and advancements in engineering and technology, and offer numerous networking opportunities with peers and industry leaders."
-  }
+  // {
+  //   q: "7. What can participants expect from the SLSYWC 2025?",
+  //   ans: "Participants can expect a variety of activities including keynote speeches from esteemed national and international speakers, technical sessions, workshops, outbound sessions and panel discussions. The congress will cover the latest trends and advancements in engineering and technology, and offer numerous networking opportunities with peers and industry leaders."
+  // }
 ]
 
 function FAQ() {

@@ -45,7 +45,10 @@ export default function Home() {
                 </div>
                 <div className="flex space-x-2">
                   <CalendarDays color="#2563eb" />
-                  <div className="font-bold">Oct 4th | 5th | 6th 2025</div>
+                  <div className="font-bold">
+                    Sept 19<sup>th</sup> | 20<sup>th</sup> | 21
+                    <sup className="mr-1">st</sup> 2025
+                  </div>
                 </div>
               </div>
               <div className="py-6 text-start md:text-start">

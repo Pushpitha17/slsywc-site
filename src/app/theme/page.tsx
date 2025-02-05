@@ -39,7 +39,7 @@ function ThemePage() {
         </div> */}
         <div className="container flex flex-col items-center">
           <div className="md:w-1/2 mx-auto">
-            <img src="/2025/theme-logo.svg" alt="" />
+            <img src="/2025/theme-logo.svg" alt="theme logo" />
           </div>
           <p className="my-12 max-w-[100ch] md:text-center">
             The IEEE Sri Lanka Section Student | Young Professionals | Women in
