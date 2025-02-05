@@ -31,10 +31,10 @@ function PastEvents() {
             <p className="text-justify md:text-left md:text-[22px] md:my-20">
               In 2024, the IEEE Sri Lanka Section Students | Young Professionals
               | Women in Engineering Congress marked its 13th installment with
-              the theme{" "}
+              the theme&quot;
               <span className="bg-text-gradient text-transparent bg-clip-text">
                 "Revolutionizing the digital landscape."
-              </span>{" "}
+              </span>&quot;
               The event was held for over three inspiring days at the
               picturesque Hotel Sudu Araliya, Polonnaruwa, with around 200
               participants from diverse backgrounds. Throughout the congress,
