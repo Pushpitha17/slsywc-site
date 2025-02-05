@@ -6,21 +6,21 @@ const teamData = {
     {
       img: "manodya.png",
       post: "Chair",
-      pillar: "Student Activity Committee",
+      pillar: "Student Activities Committee",
       name: "Mr. Manodya Nabadawewa",
       uni: ""
     },
     {
       img: "joshiga.png",
       post: "Section Student Representative",
-      pillar: "Student Activity Committee",
-      name: "Ms. Joshiga Revikumar",
+      pillar: "Student Activities Committee",
+      name: "Ms. Joshiga Ravikumar",
       uni: ""
     },
     {
       img: "uvindu.png",
       post: "Vice Chair",
-      pillar: "Student Activity Committee",
+      pillar: "Student Activities Committee",
       name: "Mr. Uvindu Kodikara",
       uni: ""
     }
