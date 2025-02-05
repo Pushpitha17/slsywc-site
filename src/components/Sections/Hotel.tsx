@@ -11,52 +11,52 @@ function Hotel() {
             Location
           </h2>
         </div>
-        <div className="mb-8 md:hidden block " >
+        <div className="mb-8 md:hidden block ">
           <h3 className="font-semibold text-xl md:text-4xl  md:mb-2">
-            Hotel Sudu Araliya
+            Cinnamon Life City of Dreams
           </h3>
           <div className="flex mb-4 md:mb-8">
             <MapPin />
-            <span className="text-xl">Polonnaruwa</span>
+            <span className="text-xl">Colombo</span>
           </div>
         </div>
         <div className="md:flex justify-center gap-6">
-          <div className="md:w-1/2 md:h-max-content flex items-center justify-center">
+          <div className="md:w-1/2 md:h-max-content flex items-center justify-center rounded-3xl ">
             <img
-              src="/assets/hotel.png"
-              className="duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(255,0,0,0.3)]"
+              src="/2025/skyline.jpg"
+              className="duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(37,99,235,0.3)] object-cover object-center rounded-3xl"
               alt=""
             />
           </div>
           <div className="md:w-1/2 md:max-w-[40ch] mt-12 md:mt-0 ">
-            <div className="md:block hidden "> 
+            <div className="md:block hidden ">
               <h3 className="font-semibold text-2xl md:text-4xl  md:mb-2">
-                Hotel Sudu Araliya
+                Cinnamon Life City of Dreams
               </h3>
               <div className="flex mb-4 md:mb-8">
                 <MapPin />
-                <span className="text-xl">Polonnaruwa</span>
+                <span className="text-xl">Colombo</span>
               </div>
             </div>
             <p className="text-justify md:text-left mb-4 text-sm">
-              The spectacular remains of Polonnaruwa, Sri Lanka&apos;s second ancient
-              city, articulately depict some of the best-preserved architectural
-              masterpieces of the era. Located in Sri Lanka&apos;s North Western
-              Province, Polonnaruwa is about 230 kilometers away from Colombo,
-              the country&apos;s capital. 
+              The magnificent Cinnamon Life – City of Dreams stands as a symbol
+              of modern architectural brilliance, redefining Colombo’s skyline.
+              Located in the heart of Sri Lanka’s vibrant capital, this iconic
+              integrated development is set to be the ultimate hub for luxury,
+              business, and entertainment. 
             </p>
             <div>
               <a
-                href="https://www.araliyaresorts.com/hotel-sudu-araliya/"
+                href="https://www.cinnamonhotels.com/cinnamon-life-city-of-dreams-sri-lanka"
                 target="_blank"
                 className="flex"
               >
                 {/* border-solid border-b-[2px] border-[#9E0521]  */}
                 <div className="flex bg-text-gradient text-transparent bg-clip-text ">
-                  <p className="font-semibold underline  decoration-[#9E0521] underline-offset-4">
+                  <p className="font-semibold underline decoration-[#2563eb] underline-offset-8">
                     Visit Website
                   </p>
-                  <ChevronRight color="#9E0521" />
+                  <ChevronRight color="#2563eb" />
                 </div>
               </a>
             </div>

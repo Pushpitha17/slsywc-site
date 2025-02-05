@@ -11,14 +11,12 @@ import Organized from "@/components/Sections/Organized"
 import Footer from "@/components/Sections/Footer"
 import Team from "@/components/Sections/Team"
 import Hotel from "@/components/Sections/Hotel"
-import { MapPin, CalendarDays } from 'lucide-react';
-
-
+import { MapPin, CalendarDays } from "lucide-react"
 
 export default function Home() {
   return (
     <main className="min-h-screen w-full bg-primary-background text-primary-foreground relative">
-      <div className="h-[2px] w-full bg-main-gradient absolute top-0 z-50"></div>
+      <div className="h-[5px] w-full bg-main-gradient absolute top-0 z-50"></div>
       <Navbar></Navbar>
       <section className="w-full" id="home">
         <div className="h-[100svh] md:h-[100vh] relative bg-[url('/assets/new-mobile-bg.jpg')] md:bg-[url('/assets/Home.jpg')] md:bg-cover">
@@ -33,25 +31,33 @@ export default function Home() {
                 IEEE Sri Lanka Section Students | YP | WIE Congress{" "}
               </div>
               <div className="font-bold text-[3.5rem] leading-[4rem] md:text-[6rem] md:leading-[6rem] text-center md:text-start">
-                <div className="md:flex-col inline-flex bg-[linear-gradient(to_right,#0060dd,#04e4fe,#0060dd,#04e4fe,#0060dd)] text-transparent bg-clip-text bg-[length:200%_auto] animate-gradient-animation">
+                <div className="md:flex-col inline-flex bg-[linear-gradient(to_right,#004cf1,#00BBBB,#00b836,#004cf1)] text-transparent bg-clip-text bg-[length:200%_auto] animate-gradient-animation">
                   <span>SLSYWC</span>
-                  <span>&apos;24</span>
+                  <span>&apos;25</span>
                 </div>
               </div>
               <div className="pt-6 text-[#dcdde1]">
                 <div className="flex space-x-2 py-2">
-                  <MapPin  color="#E71010"></MapPin>
-                  <div className="font-bold">Hotel Sudu Araliya, Polonnaruwa</div>
+                  <MapPin color="#2563eb"></MapPin>
+                  <div className="font-bold">
+                    Cinnamon Life City of Dreams, Colombo
+                  </div>
                 </div>
                 <div className="flex space-x-2">
-                  <CalendarDays color="#E71010"/>
-                  <div className="font-bold">Sep 14 | 15 | 16 2024</div>
+                  <CalendarDays color="#2563eb" />
+                  <div className="font-bold">
+                    Sept 19<sup>th</sup> | 20<sup>th</sup> | 21
+                    <sup className="mr-1">st</sup> 2025
+                  </div>
                 </div>
               </div>
               <div className="py-6 text-start md:text-start">
-                <div className="py-2 text-red-500 font-medium">
-                  Registrations Closed. 
-                </div>
+                {/* registration closed */}
+                {/* <div className="py-2 text-blue-500 font-medium">
+                  Registrations Closed.
+                </div> */}
+
+                {/* register open */}
                 {/* <Link href={"/register"} className="z-50">
                   {" "}
                   <Button

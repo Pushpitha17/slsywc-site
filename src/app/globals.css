@@ -2,15 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.cdnfonts.com/css/seven-segment');
-
+@import url("https://fonts.cdnfonts.com/css/seven-segment");
 
 @layer base {
   :root {
-    --foreground : 0, 84%, 60%;
-    --primary :198 93% 88%;
-    --primary-foreground :0 0% 100%;
-    --primary-background :240, 100%, 3%;
-    --muted-foreground: 218, 11%, 65%
+    --foreground: 0, 84%, 60%;
+    --primary: 198 93% 88%;
+    --primary-foreground: 0 0% 100%;
+    --primary-background: 240, 100%, 3%;
+    --muted-foreground: 218, 11%, 65%;
+  }
+}
+
+@layer utilities {
+  .border-gradient {
+    @apply bg-gradient-to-r from-[#004CF1] via-[#00BBBB] to-[#00B836];
   }
 }

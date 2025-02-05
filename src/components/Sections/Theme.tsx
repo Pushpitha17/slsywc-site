@@ -6,9 +6,9 @@ function Theme() {
   return (
     <section id="theme" className="my-24">
       <div className="container flex-col">
-        <div className="flex items-center justify-center h-full">
+        <div className="flex items-center justify-center h-full mb-5 md:mb-0">
           <p className="text-2xl md:text-5xl font-bold md:w-2/3 text-center bg-text-gradient text-transparent bg-clip-text md:mb-8">
-            Introducing the Theme of IEEE SLSYWC Congress 2024!
+            Introducing the Theme of IEEE SLSYWC Congress 2025!
           </p>
         </div>
         <div className="md:flex items-center justify-center gap-6 ">
@@ -20,10 +20,14 @@ function Theme() {
               IEEE SLSYWC Congress 2024!
             </p>
           </div> */}
-          <div className="md:w-1/2 duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(255,0,0,0.3)]">
-            <img src="/assets/theme.png" alt="" />
+          <div className="md:w-1/2 relative duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(37,99,235,0.3)]">
+            <img
+              className="object-cover object-center"
+              src="/2025/theme-logo.svg"
+              alt=""
+            />
           </div>
-          <div className="md:w-1/2 md:max-w-[40ch]">
+          <div className="md:w-1/2 md:max-w-[40ch] my-5 md:my-0 ">
             {/* <div className="hidden md:block">
               <p className="text-lg font-bold text-center  md:text-start">
                 Introducing the Theme for
@@ -32,25 +36,28 @@ function Theme() {
                 IEEE SLSYWC Congress 2024!
               </p>
             </div> */}
-            <p className="my-6 text-justify md:text-left md:text-[22px]">
-              Embark on a transformative journey into the future of digital
-              innovation at this year&apos;s largest technical conference in the
-              country, serving as the 13th installment. It would pose as a
-              platform that unites researchers, academics, students, and
-              industry professionals from diverse backgrounds to discuss and
-              share their insights and experiences in accordance with the theme{" "}
-              {"  "}
-              <span className="font-bold text-foreground">
-                &lsquo;Revolutionizing the Digital Landscape&lsquo;
+            <p className=" text-justify md:text-left md:text-[22px]">
+              Witness the inspiring experience of an attempt to empower
+              innovations for a better tomorrow with the 14th installment of the
+              largest technical conference in the country. Uniting researchers,
+              academics, industry professionals, and students from diverse
+              backgrounds to share their thoughts, insights, and experiences,
+              the SLSYW Congress 2025 will unravel under the theme{"  "}
+              <span className="font-bold bg-text-gradient text-transparent bg-clip-text">
+                &lsquo;Innovation for Sustainability&lsquo;
               </span>
               .
             </p>
             <div className="my-6">
               <div className="flex">
                 <Link href="/theme">
-                  <div className="flex space-x-2 items-center py-2 px-3 border border-[#9E0521] rounded">
-                    <span className="bg-text-gradient text-transparent bg-clip-text font-bold uppercase">More about our Theme </span>
-                    <ChevronRight color="#9E0521"/>
+                  <div className="border-gradient p-[2px] rounded flex items-center justify-center">
+                    <div className="flex space-x-2 items-center py-2 px-3 bg-black border-none border rounded">
+                      <span className="bg-text-gradient text-transparent bg-clip-text font-bold uppercase">
+                        More about our Theme{" "}
+                      </span>
+                      <ChevronRight color="#2563eb" />
+                    </div>
                   </div>
                 </Link>
               </div>

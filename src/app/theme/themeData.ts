@@ -1,40 +1,40 @@
 const data = [
   {
     number: 1,
-    title: "Technological Innovation",
-    description:
-      "Exploring cutting-edge technologies that are driving the transformation of various industries and shaping the future of digital interactions."
+    title: "Empower Future Innovators",
+    description: `With growing environmental challenges, it is essential to nurture a new generation of 
+    problem-solvers committed to sustainability`
   },
   {
     number: 2,
-    title: "Digital Transformation",
-    description:
-      "Discussing strategies for integrating digital technologies into business operations to enhance efficiency and value."
+    title: "Efficient Resource Utilization",
+    description: `As resources become increasingly scarce, maximizing efficiency through adoption 
+of cutting-edge technologies ensure long-term sustainability.`
   },
   {
     number: 3,
-    title: "Cybersecurity and Privacy",
-    description: "Securing digital infrastructures and ensuring data privacy."
+    title: "United Nations Sustainable Development Goals",
+    description: `Supporting Sri Lanka’s sustainable goals such as universal access to reliable energy and 
+achieving inclusive economic growth by 2030. `
   },
   {
     number: 4,
-    title: "Sustainable Digital Solutions",
-    description:
-      "Promoting the development and adoption of energy-efficient and environmentally friendly technologies."
+    title: "AI for Future ",
+    description: `To revolutionize industries by reducing carbon footprints, optimizing operations, and 
+minimizing waste. `
   },
   {
     number: 5,
-    title: "Digital Inclusion and Equity",
-    description:
-      "Focusing on efforts to bridge the digital divide and promote diversity and inclusion in the tech sector."
+    title: "Digital Inclusivity",
+    description: `Bridging the digital divide and encouraging STEM education in rural areas, enhancing 
+digital literacy to empower communities and foster inclusive growth.`
   },
   {
     number: 6,
-    title: "Future Workforce and Skills",
-    description:
-      "Identifying the skills needed for the future workforce and exploring educational initiatives to prepare for a digital economy."
+    title: "Networking and Collaboration ",
+    description: `Offers a dynamic platform for national and international professionals to connect, 
+exchange ideas, and form meaningful partnerships. `
   }
 ]
-
 
 export { data }

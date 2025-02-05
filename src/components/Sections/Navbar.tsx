@@ -102,7 +102,7 @@ function Navbar() {
                   className={clsx("mr-2 duration-500 h-12", {
                     "h-16 md:h-20": !hasScrolled
                   })}
-                  src="/assets/Congress Logo 2024.svg"
+                  src="/2025/main-logo.svg"
                   alt="Logo"
                 />
               </a>
@@ -128,9 +128,9 @@ function Navbar() {
                   </div>
                 </li>
               ))}
-              <li>
+              {/* <li>
                 <Link href="/register">Register</Link>
-              </li>
+              </li> */}
             </ul>
             <div className="lg:hidden md:flex flex-col justify-end">
               <HamburgerMenu
@@ -158,9 +158,9 @@ function Navbar() {
                     </div>
                   </li>
                 ))}
-                <li className="py-3 pl-8 border-b-2 border-primary-background">
+                {/* <li className="py-3 pl-8 border-b-2 border-primary-background">
                   <Link href="/register">Register</Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           )}
