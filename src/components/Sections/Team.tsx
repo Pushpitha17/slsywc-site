@@ -95,7 +95,7 @@ function Team() {
       <div className="md:pb-40 container pt-16 md:pt-40">
         <div className="flex flex-col items-center mb-20">
           <p className="text-2xl md:text-5xl font-bold text-center bg-text-gradient text-transparent bg-clip-text uppercase">
-            Organizing Committee
+            Student Activities Committee
           </p>
         </div>
         <div className="md:container mb-12">
