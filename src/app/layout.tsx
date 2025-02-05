@@ -3,11 +3,11 @@ import { inter } from "./fonts"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "SLSYWC'24",
+  title: "SLSYWC'25",
   description:
     "IEEE SL SECTION STUDENTS | YP | WIE CONGRESS IN COLLABORATION WITH CS SYP GLOBAL CONGRESS",
   icons: {
-    icon: ["/assets/logo.ico"]
+    icon: ["/2025/logo-ico.png"]
   }
 }
 

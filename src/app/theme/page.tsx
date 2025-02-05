@@ -18,7 +18,7 @@ function ThemePage() {
               <a href="/#">
                 <img
                   className="h-12 md:h-16"
-                  src="/assets/Congress Logo 2024.svg"
+                  src="/2025/main-logo.svg"
                   alt="Logo"
                 />
               </a>
@@ -39,7 +39,7 @@ function ThemePage() {
         </div> */}
         <div className="container flex flex-col items-center">
           <div className="md:w-1/2 mx-auto">
-            <img src="/assets/theme.png" alt="" />
+            <img src="/2025/theme-logo.svg" alt="" />
           </div>
           <p className="my-12 max-w-[100ch] md:text-center">
             The IEEE Sri Lanka Section Student | Young Professionals | Women in

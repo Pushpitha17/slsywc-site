@@ -23,7 +23,7 @@ function Hotel() {
         <div className="md:flex justify-center gap-6">
           <div className="md:w-1/2 md:h-max-content flex items-center justify-center rounded-3xl ">
             <img
-              src="/2025/cinnamon-life.jpg"
+              src="/2025/skyline.jpg"
               className="duration-300 ease-in-out hover:filter hover:drop-shadow-[0_4px_30px_rgba(37,99,235,0.3)] object-cover object-center rounded-3xl"
               alt=""
             />
