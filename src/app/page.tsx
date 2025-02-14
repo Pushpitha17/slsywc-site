@@ -12,6 +12,7 @@ import Footer from "@/components/Sections/Footer"
 import Team from "@/components/Sections/Team"
 import Hotel from "@/components/Sections/Hotel"
 import { MapPin, CalendarDays } from "lucide-react"
+import Program from "@/components/Sections/Program"
 
 export default function Home() {
   return (
@@ -109,6 +110,7 @@ export default function Home() {
         <Welcome />
         <Theme />
         <Hotel />
+        <Program />
         <Sponsors />
         <PastEvents />
         <Organized />

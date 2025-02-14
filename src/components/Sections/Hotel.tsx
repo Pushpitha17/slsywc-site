@@ -13,7 +13,7 @@ function Hotel() {
         </div>
         <div className="mb-8 md:hidden block ">
           <h3 className="font-semibold text-xl md:text-4xl  md:mb-2">
-            Cinnamon Life City of Dreams
+            {/* Cinnamon Life City of Dreams */}
           </h3>
           <div className="flex mb-4 md:mb-8">
             <MapPin />
@@ -31,7 +31,7 @@ function Hotel() {
           <div className="md:w-1/2 md:max-w-[40ch] mt-12 md:mt-0 ">
             <div className="md:block hidden ">
               <h3 className="font-semibold text-2xl md:text-4xl  md:mb-2">
-                Cinnamon Life City of Dreams
+                {/* Cinnamon Life City of Dreams */}
               </h3>
               <div className="flex mb-4 md:mb-8">
                 <MapPin />
