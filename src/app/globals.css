@@ -19,3 +19,9 @@
     @apply bg-gradient-to-r from-[#004CF1] via-[#00BBBB] to-[#00B836];
   }
 }
+
+body {
+  overflow: auto;
+  overflow-x: hidden;
+  /* Lenis handles scrolling */
+}

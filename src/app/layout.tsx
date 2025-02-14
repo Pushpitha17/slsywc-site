@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { inter } from "./fonts"
 import "./globals.css"
+import LenisProvider from "@/components/LenisProvider"
 
 export const metadata: Metadata = {
   title: "SLSYWC'25",
@@ -18,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <LenisProvider>{children}</LenisProvider>
+      </body>
     </html>
   )
 }
