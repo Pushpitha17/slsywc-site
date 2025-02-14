@@ -39,11 +39,13 @@ function Hotel() {
               </div>
             </div>
             <p className="text-justify md:text-left mb-4 text-sm">
-              The magnificent Cinnamon Life – City of Dreams stands as a symbol
-              of modern architectural brilliance, redefining Colombo’s skyline.
-              Located in the heart of Sri Lanka’s vibrant capital, this iconic
-              integrated development is set to be the ultimate hub for luxury,
-              business, and entertainment. 
+              Sri Lanka’s vibrant capital, Colombo, is a stunning blend of
+              modernity and tradition, where towering skyscrapers meet historic
+              temples and colonial architecture. This bustling metropolis is the
+              beating heart of the island, offering an unparalleled fusion of
+              luxury, business, and cultural experiences. Colombo’s dynamic
+              energy and ever-evolving skyline make it a true symbol of progress
+              and innovation in South Asia.
             </p>
             <div>
               <a

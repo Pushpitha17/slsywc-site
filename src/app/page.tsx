@@ -41,7 +41,7 @@ export default function Home() {
                 <div className="flex space-x-2 py-2">
                   <MapPin color="#2563eb"></MapPin>
                   <div className="font-bold">
-                    Cinnamon Life City of Dreams, Colombo
+                    Colombo, Sri Lanka
                   </div>
                 </div>
                 <div className="flex space-x-2">
