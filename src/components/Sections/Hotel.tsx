@@ -13,7 +13,7 @@ function Hotel() {
         </div>
         <div className="mb-8 md:hidden block ">
           <h3 className="font-semibold text-xl md:text-4xl  md:mb-2">
-            The City of Dreams
+            {/* Cinnamon Life City of Dreams */}
           </h3>
           <div className="flex mb-4 md:mb-8">
             <MapPin />
@@ -31,7 +31,7 @@ function Hotel() {
           <div className="md:w-1/2 md:max-w-[40ch] mt-12 md:mt-0 ">
             <div className="md:block hidden ">
               <h3 className="font-semibold text-2xl md:text-4xl  md:mb-2">
-                The City of Dreams
+                {/* Cinnamon Life City of Dreams */}
               </h3>
               <div className="flex mb-4 md:mb-8">
                 <MapPin />
@@ -39,7 +39,13 @@ function Hotel() {
               </div>
             </div>
             <p className="text-justify md:text-left mb-4 text-sm">
-              Sri Lanka’s vibrant capital, Colombo, is a stunning blend of modernity and tradition, where towering skyscrapers meet historic temples and colonial architecture. This bustling metropolis is the beating heart of the island, offering an unparalleled fusion of luxury, business, and cultural experiences. Colombo’s dynamic energy and ever-evolving skyline make it a true symbol of progress and innovation in South Asia.
+              Sri Lanka’s vibrant capital, Colombo, is a stunning blend of
+              modernity and tradition, where towering skyscrapers meet historic
+              temples and colonial architecture. This bustling metropolis is the
+              beating heart of the island, offering an unparalleled fusion of
+              luxury, business, and cultural experiences. Colombo’s dynamic
+              energy and ever-evolving skyline make it a true symbol of progress
+              and innovation in South Asia.
             </p>
             <div>
               <a
