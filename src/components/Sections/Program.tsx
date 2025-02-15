@@ -4,65 +4,132 @@ import React, { useEffect, useState } from "react"
 
 const schedule1 = [
   {
-    time: "12:00",
-    event: "Deletgate Registration"
+    time: "11:30 AM",
+    event: "Delegate Registration and Lunch "
   },
   {
-    time: "13:00",
-    event: "Networking Activities - Ice breaker session"
+    time: "01:00 PM",
+    event: "Ushering of Guests "
   },
   {
-    time: "13:30",
-    event: "Ushering of Guests"
+    time: "01:10 PM",
+    event: "Commencement of the Opening Ceremony "
   },
   {
-    time: "13:45",
-    event: "Commencement of the Opening Ceremony"
+    time: "01:20 PM",
+    event: "Welcome Speech "
   },
   {
-    time: "13:55",
-    event: "Welcome Speech"
+    time: "01:25 PM",
+    event: "Speech by IEEE Sri Lanka Section Chair "
   },
   {
-    time: "14:05",
-    event: "Speech on IEEE Sri Lanka"
+    time: "01:45 PM",
+    event: "Inside Congress - An overview of Congress Protocols "
   },
   {
-    time: "14:25",
-    event: "Key Note Speech (Motivational)"
+    time: "02:00 PM",
+    event: "Oppurtunity pathways with IEEE "
   },
   {
-    time: "15:05",
-    event: "Evening Tea"
+    time: "02:30 PM",
+    event: "Technical session (Key note + Panel discussion) "
   },
   {
-    time: "15:35",
-    event: "Inside Congress: An Overview of Congress Protocols"
+    time: "04:30 PM",
+    event: "Room Allocation "
   },
   {
-    time: "15:55",
-    event: "IAS Session"
+    time: "05:30 PM",
+    event: "Getting ready for Handawa and Dinner "
   },
   {
-    time: "17:55",
-    event: "Evening Plenary - Team Activity"
-  },
-  {
-    time: "18:40",
-    event: "Dinner Preparations"
-  },
-  {
-    time: "19:40",
-    event: "Dinner"
-  },
-  {
-    time: "21:10",
-    event: "End of Day 1 (IEEE Handawa)"
+    time: "07:30 PM",
+    event: "IEEE Handawa "
   }
 ]
 
-const schedule2: { time: string; event: string }[] = []
-const schedule3: { time: string; event: string }[] = []
+const schedule2: { time: string; event: string }[] = [
+  {
+    time: "08:00 AM",
+    event: "Breakfast"
+  },
+  {
+    time: "09:00 AM",
+    event: "Opening Pleanary"
+  },
+  {
+    time: "19:05 AM",
+    event: "Vision building session "
+  },
+  {
+    time: "10:45 AM",
+    event: "Student Track "
+  },
+  {
+    time: "11:45 AM",
+    event: "Group photo "
+  },
+  {
+    time: "12:00 PM",
+    event: "Lunch "
+  },
+  {
+    time: "01:00 PM",
+    event: "YP/WIE Track "
+  },
+  {
+    time: "02:00 PM",
+    event: "Chapter Stalls"
+  },
+  {
+    time: "02:50 PM",
+    event: "Outbound training activites "
+  },
+  {
+    time: "04:30 PM",
+    event: "Evening tea "
+  },
+  {
+    time: "05:00 PM",
+    event: "Preparation time for awards night"
+  },
+  {
+    time: "07:00 PM",
+    event: "Dinner"
+  },
+  {
+    time: "08:00 PM",
+    event: "Awards night and DJ"
+  }
+]
+
+const schedule3: { time: string; event: string }[] = [
+  {
+    time: "08:00 AM",
+    event: "Breakfast "
+  },
+  {
+    time: "09:00 AM",
+    event: "Opening Pleanary "
+  },
+  {
+    time: "09:15 AM",
+    event: "Technical session "
+  },
+  {
+    time: "11:15 AM",
+    event: "Commencement of the Closing Ceremony "
+  },
+  {
+    time: "11:25 AM",
+    event: "Prize giving and the after movie "
+  },
+  {
+    time: "11:50 AM",
+    event: "Vote of thanks "
+  }
+]
 
 const Program = () => {
   const [activeElement, setActiveElement] = useState(1)
@@ -140,7 +207,7 @@ const Program = () => {
           <div className="flex flex-col gap-3 mt-10">
             {schedule.map((event, i) => (
               <div key={i} className="flex items-center justify-center gap-5">
-                <div>{event.time}</div>
+                <div className="w-[80px] flex justify-end">{event.time}</div>
                 <div>
                   <div className="w-[40px] h-[0.5px] bg-white/70"></div>
                 </div>
